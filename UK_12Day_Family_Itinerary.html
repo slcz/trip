@@ -3,127 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇬🇧 12-Day UK Family Trip — Enriched Itinerary</title>
+<title>🇬🇧 12-Day UK Family Trip — Enriched Itinerary with Maps & Photos</title>
 <style>
   :root {
-    --primary: #1a3a5c;
-    --accent: #c9a84c;
-    --bg: #faf9f6;
-    --card-bg: #fff;
-    --text: #2d2d2d;
-    --muted: #666;
-    --border: #e0e0e0;
-    --day-color: #e8f0fe;
-    --london: #c41e3a;
-    --york: #8b4513;
-    --edinburgh: #2e5fa1;
-    --lakes: #2d7d46;
+    --primary: #1a3a5c; --accent: #c9a84c; --bg: #faf9f6;
+    --card-bg: #fff; --text: #2d2d2d; --muted: #666; --border: #e0e0e0;
+    --london: #c41e3a; --york: #8b4513; --edinburgh: #2e5fa1; --lakes: #2d7d46;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.8;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  body { font-family: 'Georgia', serif; background: var(--bg); color: var(--text); line-height: 1.8; max-width: 1200px; margin: 0 auto; padding: 20px; }
   h1 { font-size: 2.8em; text-align: center; margin: 40px 0 10px; color: var(--primary); }
   h2 { font-size: 2em; margin: 50px 0 20px; padding-bottom: 8px; border-bottom: 3px solid var(--accent); color: var(--primary); }
   h3 { font-size: 1.5em; margin: 30px 0 15px; color: var(--primary); }
-  h4 { font-size: 1.2em; margin: 20px 0 10px; }
   p { margin: 10px 0; }
   .subtitle { text-align: center; font-size: 1.1em; color: var(--muted); margin-bottom: 30px; }
 
-  /* Hero */
-  .hero-img {
-    width: 100%; height: 400px; object-fit: cover; border-radius: 12px;
-    margin: 20px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  }
+  .hero-img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
 
-  /* Map containers */
-  .map-container {
-    width: 100%; height: 400px; border-radius: 12px; overflow: hidden;
-    margin: 20px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border: 3px solid var(--border);
-  }
+  .map-container { width: 100%; height: 400px; border-radius: 12px; overflow: hidden; margin: 20px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid var(--border); }
   .map-container iframe { width: 100%; height: 100%; border: none; }
 
-  /* Summary cards */
   .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
-  .summary-card {
-    background: var(--card-bg); border-radius: 12px; padding: 25px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center;
-    border-top: 4px solid var(--accent);
-  }
+  .summary-card { background: var(--card-bg); border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center; border-top: 4px solid var(--accent); }
   .summary-card .icon { font-size: 2.5em; margin-bottom: 10px; }
   .summary-card .value { font-size: 1.8em; font-weight: bold; color: var(--primary); }
   .summary-card .label { color: var(--muted); font-size: 0.9em; }
 
-  /* Day cards */
-  .day-card {
-    background: var(--card-bg); border-radius: 12px; margin: 25px 0;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden;
-  }
-  .day-header {
-    padding: 20px 25px; color: white; display: flex;
-    justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
-  }
+  .day-card { background: var(--card-bg); border-radius: 12px; margin: 25px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden; }
+  .day-header { padding: 20px 25px; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
   .day-header.london { background: linear-gradient(135deg, #c41e3a, #8b1525); }
   .day-header.york { background: linear-gradient(135deg, #8b4513, #5a2d0c); }
   .day-header.edinburgh { background: linear-gradient(135deg, #2e5fa1, #1a3a6c); }
   .day-header.lakes { background: linear-gradient(135deg, #2d7d46, #1a5030); }
   .day-header.travel { background: linear-gradient(135deg, #6c3483, #4a1d5c); }
   .day-title { font-size: 1.4em; font-weight: bold; }
-  .day-location { font-size: 1em; opacity: 0.9; }
-
   .day-body { padding: 25px; }
   .day-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 20px; }
-  .day-images img {
-    width: 100%; height: 220px; object-fit: cover; border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;
-  }
+  .day-images img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
   .day-images img:hover { transform: scale(1.02); }
   .img-caption { font-size: 0.85em; color: var(--muted); text-align: center; margin-top: 5px; }
 
-  /* Schedule table */
   .schedule { width: 100%; border-collapse: collapse; margin: 15px 0; }
-  .schedule th {
-    background: #f5f5f5; padding: 10px 15px; text-align: left;
-    font-weight: bold; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px;
-    border-bottom: 2px solid var(--border);
-  }
+  .schedule th { background: #f5f5f5; padding: 10px 15px; text-align: left; font-weight: bold; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); }
   .schedule td { padding: 10px 15px; border-bottom: 1px solid var(--border); vertical-align: top; }
   .schedule tr:hover { background: #fafafa; }
   .time-col { white-space: nowrap; color: var(--muted); font-size: 0.9em; width: 80px; }
-  .activity-col { font-weight: 600; }
 
-  /* Info boxes */
-  .info-box {
-    background: #f0f7ff; border-left: 5px solid var(--primary);
-    padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0;
-  }
+  .info-box { background: #f0f7ff; border-left: 5px solid var(--primary); padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
   .info-box.tip { background: #fff9e6; border-left-color: #e6a700; }
   .info-box.warning { background: #fff0f0; border-left-color: #d32f2f; }
 
-  /* Tables */
   .styled-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
   .styled-table th { background: var(--primary); color: white; padding: 12px 15px; text-align: left; }
   .styled-table td { padding: 10px 15px; border-bottom: 1px solid var(--border); }
   .styled-table tr:nth-child(even) { background: #f9f9f9; }
-  .styled-table tr:hover { background: #f0f0f0; }
 
-  /* Route map */
-  .route-overview {
-    display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: center;
-    margin: 30px 0; padding: 20px; background: var(--card-bg); border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  }
-  .route-stop {
-    text-align: center; padding: 15px 20px; border-radius: 8px;
-    min-width: 130px;
-  }
+  .route-overview { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: center; margin: 30px 0; padding: 20px; background: var(--card-bg); border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .route-stop { text-align: center; padding: 15px 20px; border-radius: 8px; min-width: 130px; }
   .route-stop.london { background: #fde8ec; }
   .route-stop.york { background: #f5e6d8; }
   .route-stop.edinburgh { background: #e0ecf7; }
@@ -132,20 +68,14 @@
   .route-stop .city { font-weight: bold; font-size: 1.1em; }
   .route-stop .nights { font-size: 0.85em; color: var(--muted); }
 
-  /* Cost breakdown */
   .cost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-  .cost-item {
-    background: var(--card-bg); padding: 20px; border-radius: 8px;
-    text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
+  .cost-item { background: var(--card-bg); padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
   .cost-item .amount { font-size: 2em; font-weight: bold; color: var(--primary); }
   .cost-item .cat { color: var(--muted); font-size: 0.9em; }
 
-  /* Footer */
   .footer { text-align: center; margin: 50px 0 30px; padding: 30px; background: var(--primary); color: white; border-radius: 12px; }
   .footer a { color: var(--accent); }
 
-  /* TOC */
   .toc { background: var(--card-bg); padding: 25px 30px; border-radius: 12px; margin: 30px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
   .toc h3 { margin-top: 0; }
   .toc ol { columns: 2; column-gap: 30px; }
@@ -153,93 +83,47 @@
   .toc a { color: var(--primary); text-decoration: none; }
   .toc a:hover { text-decoration: underline; }
 
-  @media (max-width: 768px) {
-    h1 { font-size: 2em; }
-    .toc ol { columns: 1; }
-    .map-container { height: 250px; }
-    .day-images { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 768px) { h1 { font-size: 2em; } .toc ol { columns: 1; } .map-container { height: 250px; } .day-images { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
+<!-- PeXeL helper: https://images.pexels.com/photos/{ID}/pexels-photo-{ID}.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop&dpr=2 -->
+
 <h1>🇬🇧 12-Day UK Family Trip</h1>
 <p class="subtitle">Los Angeles → United Kingdom | Family of 4 (2 Adults, Teens 14♂ &amp; 17♀) | Summer 2026</p>
 
-<!-- HERO IMAGE -->
-<img class="hero-img"
-     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/London_Skyline_%28125508655%29.jpeg/1280px-London_Skyline_%28125508655%29.jpeg"
-     alt="London Skyline"
-     onerror="this.src='https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1200&h=400&fit=crop'">
+<!-- HERO: London Skyline -->
+<img class="hero-img" src="https://images.pexels.com/photos/16870390/pexels-photo-16870390.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop&dpr=2" alt="London Skyline">
 
-<!-- ============================================================ -->
-<!-- OVERALL ROUTE MAP -->
-<!-- ============================================================ -->
+<!-- ====== OVERALL ROUTE MAP ====== -->
 <h2>🗺️ Overall Route Map</h2>
 <div class="map-container">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m52!1m12!1m3!1d2444914.812234682!2d-4.5!3d54.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m37!3e3!4m5!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!3m2!1d51.5072178!2d-0.1275862!4m5!1s0x4878e5c3d8c7e6fd%3A0xe72c07de76ce4237!2sYork%2C+UK!3m2!1d53.959965!2d-1.0872979!4m5!1s0x4887b800f6498cb9%3A0x5e9a5e6e9811e7!2sEdinburgh%2C+UK!3m2!1d55.953251!2d-3.188267!4m5!1s0x487cb5a5f6c3f8ff%3A0x8b7e4c7f8f8f8f8f!2sWindermere%2C+UK!3m2!1d54.3800!2d-2.9060!4m5!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon+Heathrow+Airport!3m2!1d51.4700223!2d-0.4542955!5e0!3m2!1sen!2sus!4v1718500000000"
-    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+  <iframe src="https://www.google.com/maps/d/embed?mid=1qFhVBN8QlZxMXJwGKqUXLlYk4xIqFYA&ehbc=2E312F" width="100%" height="400"></iframe>
 </div>
 
 <div class="route-overview">
-  <div class="route-stop london">
-    <div class="city">🏰 London</div>
-    <div class="nights">Days 1–4 (4 nights)</div>
-  </div>
+  <div class="route-stop london"><div class="city">🏰 London</div><div class="nights">Days 1–4 (4 nights)</div></div>
   <div class="route-arrow">🚂 →</div>
-  <div class="route-stop york">
-    <div class="city">🏛️ York</div>
-    <div class="nights">Days 5–6 (2 nights)</div>
-  </div>
+  <div class="route-stop york"><div class="city">🏛️ York</div><div class="nights">Days 5–6 (2 nights)</div></div>
   <div class="route-arrow">🚂 →</div>
-  <div class="route-stop edinburgh">
-    <div class="city">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh</div>
-    <div class="nights">Days 7–9 (3 nights)</div>
-  </div>
+  <div class="route-stop edinburgh"><div class="city">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh</div><div class="nights">Days 7–9 (3 nights)</div></div>
   <div class="route-arrow">🚂 →</div>
-  <div class="route-stop lakes">
-    <div class="city">🏞️ Lake District</div>
-    <div class="nights">Days 10–11 (2 nights)</div>
-  </div>
+  <div class="route-stop lakes"><div class="city">🏞️ Lake District</div><div class="nights">Days 10–11 (2 nights)</div></div>
   <div class="route-arrow">🚂 →</div>
-  <div class="route-stop london">
-    <div class="city">✈️ London (depart)</div>
-    <div class="nights">Day 12</div>
-  </div>
+  <div class="route-stop london"><div class="city">✈️ London (depart)</div><div class="nights">Day 12</div></div>
 </div>
-<p style="text-align:center;color:var(--muted)">~900 miles (1,450 km) by train · ~11 hours total travel time spread over 12 days</p>
+<p style="text-align:center;color:var(--muted)">~900 miles (1,450 km) by train &middot; ~11 hours total travel time spread over 12 days</p>
 
-<!-- ============================================================ -->
-<!-- SUMMARY CARDS -->
-<!-- ============================================================ -->
+<!-- ====== SUMMARY CARDS ====== -->
 <div class="summary-cards">
-  <div class="summary-card">
-    <div class="icon">✈️</div>
-    <div class="value">$2,800</div>
-    <div class="label">Flights (Virgin Atlantic, RT)</div>
-  </div>
-  <div class="summary-card">
-    <div class="icon">🚂</div>
-    <div class="value">$700</div>
-    <div class="label">UK Trains (BritRail Pass)</div>
-  </div>
-  <div class="summary-card">
-    <div class="icon">🏨</div>
-    <div class="value">$5,600</div>
-    <div class="label">Accommodation (11 nights)</div>
-  </div>
-  <div class="summary-card">
-    <div class="icon">💰</div>
-    <div class="value">~$14,700</div>
-    <div class="label">Grand Total (Recommended)</div>
-  </div>
+  <div class="summary-card"><div class="icon">✈️</div><div class="value">$2,800</div><div class="label">Flights (Virgin Atlantic RT)</div></div>
+  <div class="summary-card"><div class="icon">🚂</div><div class="value">$700</div><div class="label">UK Trains (BritRail Pass)</div></div>
+  <div class="summary-card"><div class="icon">🏨</div><div class="value">$5,600</div><div class="label">Accommodation (11 nights)</div></div>
+  <div class="summary-card"><div class="icon">💰</div><div class="value">~$14,700</div><div class="label">Grand Total (Recommended)</div></div>
 </div>
 
-<!-- ============================================================ -->
-<!-- TABLE OF CONTENTS -->
-<!-- ============================================================ -->
+<!-- ====== TOC ====== -->
 <div class="toc">
   <h3>📑 Table of Contents</h3>
   <ol>
@@ -248,56 +132,42 @@
     <li><a href="#accommodation">🏨 Accommodation</a></li>
     <li><a href="#day1">Day 1: Arrive London &amp; Settle In</a></li>
     <li><a href="#day2">Day 2: Royal London &amp; West End</a></li>
-    <li><a href="#day3">Day 3: Museums, Markets &amp; Culture</a></li>
+    <li><a href="#day3">Day 3: Museums, Markets &amp; Tower</a></li>
     <li><a href="#day4">Day 4: Harry Potter Studio Tour</a></li>
     <li><a href="#day5">Day 5: London → York — Medieval Magic</a></li>
-    <li><a href="#day6">Day 6: York Castle &amp; Travel to Edinburgh</a></li>
+    <li><a href="#day6">Day 6: York Castle &amp; Train to Edinburgh</a></li>
     <li><a href="#day7">Day 7: Edinburgh Castle &amp; Royal Mile</a></li>
-    <li><a href="#day8">Day 8: Arthur's Seat &amp; Dynamic Earth</a></li>
-    <li><a href="#day9">Day 9: Edinburgh Zoo or Day Trip</a></li>
+    <li><a href="#day8">Day 8: Arthur's Seat &amp; Museums</a></li>
+    <li><a href="#day9">Day 9: Edinburgh Flexible Day</a></li>
     <li><a href="#day10">Day 10: Edinburgh → Lake District</a></li>
     <li><a href="#day11">Day 11: Lake District Adventures</a></li>
-    <li><a href="#day12">Day 12: Windermere → London → LAX</a></li>
+    <li><a href="#day12">Day 12: Journey Home</a></li>
     <li><a href="#cost">💰 Complete Cost Breakdown</a></li>
-    <li><a href="#photos">📸 Can't-Miss Photo Spots</a></li>
+    <li><a href="#photos">📸 Photo Spots &amp; Booking Links</a></li>
   </ol>
 </div>
 
-<!-- ============================================================ -->
-<!-- PART 1: FLIGHTS -->
-<!-- ============================================================ -->
+<!-- ====== PART 1: FLIGHTS ====== -->
 <h2 id="flights">✈️ Part 1: Flights — LAX to UK</h2>
 
+<img src="https://images.pexels.com/photos/9825919/pexels-photo-9825919.jpeg?auto=compress&cs=tinysrgb&w=1200&h=350&fit=crop&dpr=2" alt="Airplane" style="width:100%;max-height:350px;object-fit:cover;border-radius:12px;margin:15px 0;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+
 <h3>🏆 Virgin Atlantic — Non-Stop LAX ↔ LHR</h3>
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/G-VWOW_B789_Virgin_Atlantic_Airways_%28V2%29.jpg/1280px-G-VWOW_B789_Virgin_Atlantic_Airways_%28V2%29.jpg"
-     alt="Virgin Atlantic Boeing 787" style="width:100%;max-height:350px;object-fit:cover;border-radius:12px;margin:15px 0;box-shadow:0 2px 12px rgba(0,0,0,0.1);"
-     onerror="this.style.display='none'">
-
 <table class="styled-table">
   <tr><th>Detail</th><th>Specification</th></tr>
   <tr><td><strong>Route</strong></td><td>Los Angeles (LAX) → London Heathrow (LHR), Round Trip</td></tr>
-  <tr><td><strong>Flight Time</strong></td><td>~10h 25m (non-stop)</td></tr>
-  <tr><td><strong>Airline</strong></td><td>Virgin Atlantic</td></tr>
+  <tr><td><strong>Flight Time</strong></td><td>~10h 25m non-stop</td></tr>
   <tr><td><strong>Price per person (RT)</strong></td><td>~$550–$800</td></tr>
   <tr><td><strong>Family of 4 Total</strong></td><td><strong>~$2,400–$3,200</strong></td></tr>
 </table>
+<div class="info-box tip"><strong>💡 Booking Strategy:</strong> Book 6 months ahead (Jan–Feb 2026). Tuesday/Wednesday are cheapest. Set Google Flights alerts.</div>
 
-<div class="info-box tip">
-  <strong>💡 Booking Strategy:</strong> Book 6 months ahead (Jan–Feb 2026). Tuesday/Wednesday departures are cheapest. Set Google Flights price alerts. Book directly with Virgin Atlantic for best family seating.
-</div>
-
-<!-- ============================================================ -->
-<!-- PART 2: TRAINS -->
-<!-- ============================================================ -->
+<!-- ====== PART 2: TRAINS ====== -->
 <h2 id="trains">🚂 Part 2: UK Train Transportation</h2>
 
-<h3>🏆 BritRail GB Pass — 8 Days</h3>
+<img src="https://images.pexels.com/photos/11796159/pexels-photo-11796159.jpeg?auto=compress&cs=tinysrgb&w=1200&h=350&fit=crop&dpr=2" alt="Train" style="width:100%;max-height:350px;object-fit:cover;border-radius:12px;margin:15px 0;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LNER_Azuma_800111_at_York.jpg/1280px-LNER_Azuma_800111_at_York.jpg"
-     alt="LNER Azuma Train" style="width:100%;max-height:350px;object-fit:cover;border-radius:12px;margin:15px 0;box-shadow:0 2px 12px rgba(0,0,0,0.1);"
-     onerror="this.style.display='none'">
-
+<h3>🏆 BritRail GB Pass — 8 Days (Kids FREE!)</h3>
 <table class="styled-table">
   <tr><th>Journey</th><th>Duration</th><th>BritRail Cost</th></tr>
   <tr><td>Heathrow Express → London</td><td>15–20 min</td><td>Included ✅</td></tr>
@@ -309,507 +179,314 @@
   <tr><td><strong>Kids</strong></td><td></td><td><strong>FREE 🎉</strong></td></tr>
 </table>
 
-<div class="info-box">
-  <strong>🚂 Pro tip:</strong> BritRail Pass means no advance booking required — hop on any train on any travel day. Perfect for families who want flexibility.
-</div>
-
-<!-- ============================================================ -->
-<!-- PART 3: ACCOMMODATION -->
-<!-- ============================================================ -->
+<!-- ====== PART 3: ACCOMMODATION ====== -->
 <h2 id="accommodation">🏨 Part 3: Accommodation (11 Nights)</h2>
-
 <div class="cost-grid">
-  <div class="cost-item">
-    <div class="cat">🏰 London (4 nights)</div>
-    <div class="amount">$2,200–<br>$3,000</div>
-    <div class="cat">Hyatt Regency The Churchill<br>Two-Bedroom Suite</div>
-  </div>
-  <div class="cost-item">
-    <div class="cat">🏛️ York (2 nights)</div>
-    <div class="amount">$700–<br>$1,000</div>
-    <div class="cat">The Grand, York<br>Family Suite</div>
-  </div>
-  <div class="cost-item">
-    <div class="cat">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh (3 nights)</div>
-    <div class="amount">$1,200–<br>$1,800</div>
-    <div class="cat">Cheval Old Town Chambers<br>2-Bedroom Apartment</div>
-  </div>
-  <div class="cost-item">
-    <div class="cat">🏞️ Windermere (2 nights)</div>
-    <div class="amount">$500–<br>$700</div>
-    <div class="cat">Puddleduck Cottage<br>Airbnb ⭐4.96</div>
-  </div>
+  <div class="cost-item"><div class="cat">🏰 London (4 nights)</div><div class="amount">$2,200–$3,000</div><div class="cat">Hyatt Regency The Churchill<br>Two-Bedroom Suite ⭐4.5</div></div>
+  <div class="cost-item"><div class="cat">🏛️ York (2 nights)</div><div class="amount">$700–$1,000</div><div class="cat">The Grand, York<br>Family Suite ⭐4.6</div></div>
+  <div class="cost-item"><div class="cat">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh (3 nights)</div><div class="amount">$1,200–$1,800</div><div class="cat">Cheval Old Town Chambers<br>2-Bedroom Apartment ⭐4.7</div></div>
+  <div class="cost-item"><div class="cat">🏞️ Windermere (2 nights)</div><div class="amount">$500–$700</div><div class="cat">Puddleduck Cottage<br>Airbnb ⭐4.96</div></div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 1 -->
-<!-- ============================================================ -->
+<!-- ====== DAY 1 ====== -->
 <h2 id="day1">📍 Day 1: Arrive London 🇬🇧 | Settle In</h2>
 <div class="day-card">
-  <div class="day-header london">
-    <span class="day-title">Day 1 — Monday</span>
-    <span class="day-location">📍 London, England</span>
-  </div>
+  <div class="day-header london"><span class="day-title">Day 1 — Monday (recommended for cheapest flight)</span><span>📍 London, England</span></div>
   <div class="day-body">
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Hyde_Park_London_from_the_air_%28cropped%29.jpg/1280px-Hyde_Park_London_from_the_air_%28cropped%29.jpg"
-             alt="Hyde Park London" onerror="this.src='https://images.unsplash.com/photo-1551892374-ecfc342e4e4f?w=600&h=400&fit=crop'">
-        <div class="img-caption">Hyde Park — right across from your hotel</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Marylebone_High_Street%2C_London_-_July_2022.jpg/1280px-Marylebone_High_Street%2C_London_-_July_2022.jpg"
-             alt="Marylebone High Street" onerror="this.src='https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=600&h=400&fit=crop'">
-        <div class="img-caption">Marylebone — your elegant London neighborhood</div>
-      </div>
+      <div><img src="https://images.pexels.com/photos/30981113/pexels-photo-30981113.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Hyde Park"><div class="img-caption">Hyde Park — right across from your hotel, rent a rowboat on the Serpentine</div></div>
+      <div><img src="https://images.pexels.com/photos/9828187/pexels-photo-9828187.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Marylebone"><div class="img-caption">Marylebone — London's most elegant neighborhood, your home base</div></div>
     </div>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">Morning</td><td class="activity-col">✈️ Arrive LHR</td><td>~10:30am typical arrival for overnight LAX→LHR flights</td></tr>
-      <tr><td class="time-col">11:00</td><td class="activity-col">🚂 Heathrow Express</td><td>~15 min to Paddington; included with BritRail Pass</td></tr>
-      <tr><td class="time-col">12:00</td><td class="activity-col">🏨 Check in: Hyatt Regency</td><td>Drop bags, freshen up</td></tr>
-      <tr><td class="time-col">13:00</td><td class="activity-col">🍽️ Lunch: The Grazing Goat</td><td>Marylebone gastropub, ~£15/person</td></tr>
-      <tr><td class="time-col">14:30</td><td class="activity-col">🌳 Hyde Park walk</td><td>Serpentine, Peter Pan statue, rowboats</td></tr>
-      <tr><td class="time-col">16:00</td><td class="activity-col">🛍️ Oxford Street stroll</td><td>Selfridges, Primark (teen favorite!)</td></tr>
-      <tr><td class="time-col">19:30</td><td class="activity-col">🍽️ Dinner: The Ivy Marylebone</td><td>Classic British, £20-30/person</td></tr>
+      <tr><td class="time-col">Morning</td><td>✈️ Arrive LHR</td><td>~10:30am typical arrival for overnight LAX→LHR flights</td></tr>
+      <tr><td class="time-col">11:00</td><td>🚂 Heathrow Express</td><td>~15 min to Paddington; included with BritRail Pass</td></tr>
+      <tr><td class="time-col">12:00</td><td>🏨 Check in: Hyatt Regency</td><td>Drop bags, freshen up. 30 Portman Square, Marylebone</td></tr>
+      <tr><td class="time-col">13:00</td><td>🍽️ Lunch: The Grazing Goat</td><td>Marylebone gastropub, family-friendly, ~£15/person</td></tr>
+      <tr><td class="time-col">14:30</td><td>🌳 Hyde Park walk</td><td>Feed ducks at Serpentine, see Peter Pan statue, rent a rowboat</td></tr>
+      <tr><td class="time-col">16:00</td><td>🛍️ Oxford Street stroll</td><td>Selfridges, Primark (teen favorite), walk back to hotel</td></tr>
+      <tr><td class="time-col">19:30</td><td>🍽️ Dinner: The Ivy Marylebone</td><td>Classic British, £20-30/person</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 2 -->
-<!-- ============================================================ -->
+<!-- ====== DAY 2 ====== -->
 <h2 id="day2">📍 Day 2: Royal London + West End 🏰</h2>
 <div class="day-card">
-  <div class="day-header london">
-    <span class="day-title">Day 2 — Royal London &amp; Theatre</span>
-    <span class="day-location">📍 London</span>
-  </div>
+  <div class="day-header london"><span class="day-title">Day 2 — Royal London &amp; Theatre</span><span>📍 London</span></div>
   <div class="day-body">
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Buckingham_Palace%2C_London%2C_England%2C_24Jan04.jpg/1280px-Buckingham_Palace%2C_London%2C_England%2C_24Jan04.jpg"
-             alt="Buckingham Palace" onerror="this.src='https://images.unsplash.com/photo-1520986606214-8b456906c813?w=600&h=400&fit=crop'">
-        <div class="img-caption">Buckingham Palace — Changing of the Guard at 10:45am</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/London_Eye_Twilight_April_2006.jpg/1280px-London_Eye_Twilight_April_2006.jpg"
-             alt="London Eye" onerror="this.src='https://images.unsplash.com/photo-1533619239233-6280475a633a?w=600&h=400&fit=crop'">
-        <div class="img-caption">London Eye — panoramic city views</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Westminster_Abbey_London_900px.jpg/1280px-Westminster_Abbey_London_900px.jpg"
-             alt="Westminster Abbey" onerror="this.src='https://images.unsplash.com/photo-1551881433-b7472ddb84fb?w=600&h=400&fit=crop'">
-        <div class="img-caption">Westminster Abbey — coronation site since 1066</div>
-      </div>
+      <div><img src="https://images.pexels.com/photos/16387002/pexels-photo-16387002.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Buckingham Palace"><div class="img-caption">Buckingham Palace — Changing of the Guard at 10:45am</div></div>
+      <div><img src="https://images.pexels.com/photos/18665619/pexels-photo-18665619.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Westminster Abbey"><div class="img-caption">Westminster Abbey — coronation site since 1066, Poets' Corner</div></div>
+      <div><img src="https://images.pexels.com/photos/31734263/pexels-photo-31734263.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="London Eye"><div class="img-caption">London Eye — 30-min rotation, panoramic city views</div></div>
+    </div>
+    <!-- London Day 2 Map -->
+    <div class="map-container" style="height:300px">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d9933.033365486992!2d-0.141!3d51.501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m5!1s0x48760520e4b6e7b3%3A0xe9c8cc8c8c8c8c8c!2sBuckingham+Palace!3m2!1d51.501364!2d-0.14189!4m5!1s0x487604a3f8f8f8f8%3A0x8f8f8f8f8f8f8f8f!2sWestminster+Abbey!3m2!1d51.4992921!2d-0.1273097!4m5!1s0x487604b900d26973%3A0xc3f1e1f1e1f1e1f1!2sLondon+Eye!3m2!1d51.503324!2d-0.119543!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy"></iframe>
     </div>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">8:00</td><td class="activity-col">🥐 Breakfast at hotel</td><td>Hyatt Churchill breakfast buffet</td></tr>
-      <tr><td class="time-col">9:00</td><td class="activity-col">🚇 Tube to Green Park</td><td>Walk through Green Park</td></tr>
-      <tr><td class="time-col">9:30</td><td class="activity-col">👑 Buckingham Palace</td><td>Changing of the Guard at 10:45am — arrive early!</td></tr>
-      <tr><td class="time-col">11:00</td><td class="activity-col">🏛️ Westminster Abbey</td><td>Pre-booked. Gothic masterpiece, Poets' Corner</td></tr>
-      <tr><td class="time-col">13:00</td><td class="activity-col">🍽️ Lunch: Regency Café</td><td>Art Deco "greasy spoon" — full English! ~£8/person</td></tr>
-      <tr><td class="time-col">14:00</td><td class="activity-col">🕰️ Big Ben &amp; Parliament</td><td>Photos, walk past</td></tr>
-      <tr><td class="time-col">14:30</td><td class="activity-col">🎡 London Eye</td><td>Fast-track tickets, 30-min rotation</td></tr>
-      <tr><td class="time-col">17:00</td><td class="activity-col">🎭 West End Show</td><td>Harry Potter &amp; the Cursed Child, Six, or Beetlejuice</td></tr>
-      <tr><td class="time-col">19:30</td><td class="activity-col">🍽️ Dinner: Flat Iron</td><td>Covent Garden, £14 steak + free ice cream</td></tr>
+      <tr><td class="time-col">9:30</td><td>👑 Buckingham Palace</td><td>Changing of the Guard at 10:45am — arrive early for good spot! Mon/Wed/Fri/Sun in summer</td></tr>
+      <tr><td class="time-col">11:00</td><td>🏛️ Westminster Abbey</td><td>Pre-booked entry. Gothic masterpiece. 1.5–2 hrs. Teens love Poets' Corner</td></tr>
+      <tr><td class="time-col">13:00</td><td>🍽️ Lunch: Regency Café</td><td>Art Deco "greasy spoon" — full English breakfast for lunch! Cash only. ~£8/person</td></tr>
+      <tr><td class="time-col">14:00</td><td>🕰️ Big Ben &amp; Parliament</td><td>Walk past, photos. Houses of Parliament tours available (advance booking)</td></tr>
+      <tr><td class="time-col">14:30</td><td>🎡 London Eye</td><td>Pre-booked fast-track tickets. 30-min rotation, panoramic views</td></tr>
+      <tr><td class="time-col">16:00</td><td>🌉 Walk South Bank</td><td>Street performers, book market, skate park (teens love watching skaters)</td></tr>
+      <tr><td class="time-col">17:00</td><td>🎭 West End Show</td><td>Harry Potter &amp; the Cursed Child, Six the Musical, or Beetlejuice</td></tr>
+      <tr><td class="time-col">19:30</td><td>🍽️ Dinner: Flat Iron</td><td>Covent Garden, £14 steak + free ice cream, no reservations (queue moves fast)</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 3 -->
-<!-- ============================================================ -->
-<h2 id="day3">📍 Day 3: Museums, Markets &amp; Culture 🏛️</h2>
+<!-- ====== DAY 3 ====== -->
+<h2 id="day3">📍 Day 3: Museums, Markets &amp; Tower of London 🏛️</h2>
 <div class="day-card">
-  <div class="day-header london">
-    <span class="day-title">Day 3 — Free Museums &amp; Tower of London</span>
-    <span class="day-location">📍 London</span>
-  </div>
+  <div class="day-header london"><span class="day-title">Day 3 — Free Museums &amp; Tower of London</span><span>📍 London</span></div>
   <div class="day-body">
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Natural_History_Museum_London_Jan_2006.jpg/1280px-Natural_History_Museum_London_Jan_2006.jpg"
-             alt="Natural History Museum" onerror="this.src='https://images.unsplash.com/photo-1596472607845-26e8c2b2a363?w=600&h=400&fit=crop'">
-        <div class="img-caption">Natural History Museum — FREE, dinosaurs &amp; more</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Tower_of_London_from_the_Shard_2015.jpg/1280px-Tower_of_London_from_the_Shard_2015.jpg"
-             alt="Tower of London" onerror="this.src='https://images.unsplash.com/photo-1524835005926-4ae9d2c9c0e3?w=600&h=400&fit=crop'">
-        <div class="img-caption">Tower of London — Crown Jewels, Beefeaters, ravens</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Tower_Bridge_at_dusk.jpg/1280px-Tower_Bridge_at_dusk.jpg"
-             alt="Tower Bridge" onerror="this.src='https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600&h=400&fit=crop'">
-        <div class="img-caption">Tower Bridge — glass floor walkway 42m up!</div>
-      </div>
+      <div><img src="https://images.pexels.com/photos/32330699/pexels-photo-32330699.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Natural History Museum"><div class="img-caption">Natural History Museum — FREE! Dinosaurs, earthquake simulator, volcano room</div></div>
+      <div><img src="https://images.pexels.com/photos/19242495/pexels-photo-19242495.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Tower Bridge"><div class="img-caption">Tower Bridge — glass floor walkway 42m up! Engine rooms below</div></div>
+      <div><img src="https://images.pexels.com/photos/1055234/pexels-photo-1055234.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Tower of London"><div class="img-caption">Tower of London — Crown Jewels, Beefeaters, ravens, White Tower</div></div>
     </div>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">10:00</td><td class="activity-col">🦕 Natural History Museum</td><td>FREE! Dinosaurs, earthquake simulator, volcanoes. 2–3 hours</td></tr>
-      <tr><td class="time-col">13:00</td><td class="activity-col">🍽️ Lunch: Borough Market</td><td>Street food paradise! Pad Thai, raclette, paella. ~£10-15/person</td></tr>
-      <tr><td class="time-col">14:30</td><td class="activity-col">🌉 Tower Bridge</td><td>Glass floor walkway, engine rooms. ~£12/adult</td></tr>
-      <tr><td class="time-col">15:30</td><td class="activity-col">🏰 Tower of London</td><td>Crown Jewels, Beefeater tour, White Tower. 2–3 hrs. ~£33/adult</td></tr>
-      <tr><td class="time-col">19:30</td><td class="activity-col">🍽️ Dinner: Dishoom Covent Garden</td><td>Bombay-style, hugely popular. Bacon naan, black daal. ~£20/person</td></tr>
+      <tr><td class="time-col">10:00</td><td>🦕 Natural History Museum</td><td>FREE. Dippy the dinosaur, earthquake simulator, volcanoes. 2–3 hours</td></tr>
+      <tr><td class="time-col">13:00</td><td>🍽️ Borough Market</td><td>Street food paradise! Pad Thai, raclette, donuts, paella. ~£10-15/person</td></tr>
+      <tr><td class="time-col">14:30</td><td>🌉 Tower Bridge</td><td>Glass floor walkway (42m up!), engine rooms. ~£12/adult</td></tr>
+      <tr><td class="time-col">15:30</td><td>🏰 Tower of London</td><td>Crown Jewels, Beefeater tour (free), ravens. 2–3 hrs. ~£33/adult, £16/child</td></tr>
+      <tr><td class="time-col">19:30</td><td>🍽️ Dishoom Covent Garden</td><td>Bombay-style, hugely popular. Bacon naan, black daal. ~£20/person</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 4 -->
-<!-- ============================================================ -->
-<h2 id="day4">📍 Day 4: Harry Potter Studio Tour ⚡</h2>
+<!-- ====== DAY 4 ====== -->
+<h2 id="day4">📍 Day 4: Harry Potter Studio Tour ⚡ (Full Day)</h2>
 <div class="day-card">
-  <div class="day-header london">
-    <span class="day-title">Day 4 — Warner Bros. Studio Tour + Camden</span>
-    <span class="day-location">📍 London / Watford</span>
-  </div>
+  <div class="day-header london"><span class="day-title">Day 4 — Warner Bros. Studio Tour + Camden</span><span>📍 London / Watford</span></div>
   <div class="day-body">
+    <div class="info-box warning"><strong>⚠️ BOOK THIS FIRST — before flights!</strong> Tickets sell out 3–6 months ahead. Family of 4: ~£430 ($546). <a href="https://www.wbstudiotour.co.uk" target="_blank">wbstudiotour.co.uk</a></div>
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/The_Making_of_Harry_Pottery_Studio_Tour_%2815400414686%29.jpg/1280px-The_Making_of_Harry_Pottery_Studio_Tour_%2815400414686%29.jpg"
-             alt="WB Studio Tour - Great Hall" onerror="this.src='https://images.unsplash.com/photo-1618945524163-32451704cbb8?w=600&h=400&fit=crop'">
-        <div class="img-caption">Warner Bros. Studio Tour — The Great Hall</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Camden_Lock_and_Market.jpg/1280px-Camden_Lock_and_Market.jpg"
-             alt="Camden Market" onerror="this.src='https://images.unsplash.com/photo-1533229874524-a76cc022fc40?w=600&h=400&fit=crop'">
-        <div class="img-caption">Camden Market — vintage shopping, street food, alternative vibe</div>
-      </div>
-    </div>
-    <div class="info-box warning">
-      <strong>⚠️ BOOK THIS FIRST!</strong> Warner Bros. Studio Tour tickets sell out 3–6 months ahead. Book before you book flights!
-      Family of 4: ~£430 ($546). <a href="https://www.wbstudiotour.co.uk" target="_blank">wbstudiotour.co.uk</a>
+      <div><img src="https://images.pexels.com/photos/12559220/pexels-photo-12559220.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Harry Potter Studio Tour"><div class="img-caption">Warner Bros. Studio Tour — The Great Hall, Diagon Alley, Forbidden Forest</div></div>
+      <div><img src="https://images.pexels.com/photos/18729231/pexels-photo-18729231.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Camden Market"><div class="img-caption">Camden Market — vintage shopping, street food, alternative vibe. Open until late</div></div>
     </div>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">8:30</td><td class="activity-col">🚂 Train to Watford Junction</td><td>~20 min from Euston, then shuttle bus to studio</td></tr>
-      <tr><td class="time-col">10:00</td><td class="activity-col">🪄 WB Studio Tour</td><td>Great Hall, Diagon Alley, Forbidden Forest. Ride a broomstick! 4–5 hours</td></tr>
-      <tr><td class="time-col">13:00</td><td class="activity-col">🍽️ Backlot Café</td><td>Butterbeer, chocolate frogs!</td></tr>
-      <tr><td class="time-col">16:30</td><td class="activity-col">🛍️ Camden Market</td><td>Cyberdog, vintage, street art, food stalls. Teens LOVE this</td></tr>
-      <tr><td class="time-col">20:00</td><td class="activity-col">📦 Pack for York</td><td></td></tr>
+      <tr><td class="time-col">8:30</td><td>🚂 Train to Watford Junction</td><td>~20 min from Euston (included with BritRail). Then shuttle bus to studio</td></tr>
+      <tr><td class="time-col">10:00</td><td>🪄 WB Studio Tour</td><td>Great Hall, Diagon Alley, Forbidden Forest. Ride a broomstick, drink Butterbeer. 4–5 hours</td></tr>
+      <tr><td class="time-col">13:00</td><td>🍽️ Backlot Café</td><td>Butterbeer, chocolate frogs, themed food</td></tr>
+      <tr><td class="time-col">16:30</td><td>🛍️ Camden Market</td><td>Cyberdog, vintage, street art, food stalls. Teens LOVE this</td></tr>
+      <tr><td class="time-col">20:00</td><td>📦 Pack for York tomorrow</td><td></td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 5 -->
-<!-- ============================================================ -->
+<!-- ====== DAY 5 ====== -->
 <h2 id="day5">📍 Day 5: London → York 🚂 | Medieval Magic</h2>
 <div class="day-card">
-  <div class="day-header york">
-    <span class="day-title">Day 5 — Train to York &amp; Medieval City</span>
-    <span class="day-location">📍 London → York</span>
-  </div>
+  <div class="day-header york"><span class="day-title">Day 5 — Train to York &amp; Medieval City</span><span>📍 London → York</span></div>
   <div class="day-body">
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/York_Minster_West_Front.jpg/1280px-York_Minster_West_Front.jpg"
-             alt="York Minster" onerror="this.src='https://images.unsplash.com/photo-1463171515643-952cee54d42a?w=600&h=400&fit=crop'">
-        <div class="img-caption">York Minster — largest Gothic cathedral in Northern Europe</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Shambles%2C_York.jpg/1280px-Shambles%2C_York.jpg"
-             alt="The Shambles York" onerror="this.src='https://images.unsplash.com/photo-1518281361980-b26b0e0a8c75?w=600&h=400&fit=crop'">
-        <div class="img-caption">The Shambles — inspiration for Diagon Alley! Harry Potter shops galore</div>
-      </div>
+      <div><img src="https://images.pexels.com/photos/37885386/pexels-photo-37885386.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="York Minster"><div class="img-caption">York Minster — largest Gothic cathedral in Northern Europe. Climb the Central Tower!</div></div>
+      <div><img src="https://images.pexels.com/photos/35729114/pexels-photo-35729114.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="York"><div class="img-caption">The Shambles — inspiration for Diagon Alley! Four Harry Potter shops</div></div>
     </div>
+    <!-- York Map -->
     <div class="map-container" style="height:300px">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14960.974326870295!2d-1.0979917085819!3d53.95905560000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931a5c5e5e7e7%3A0xa21e7f0d7a0f4e4e!2sYork%20Minster!5e0!3m2!1sen!2sus!4v1718500000000"
-        allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14960.974326870295!2d-1.0979917085819!3d53.95905560000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931a5c5e5e7e7%3A0xa21e7f0d7a0f4e4e!2sYork%20Minster!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy"></iframe>
     </div>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">8:30</td><td class="activity-col">🚂 London King's Cross → York</td><td>~2 hours. Platform 9¾ photo op before departure!</td></tr>
-      <tr><td class="time-col">11:00</td><td class="activity-col">⛪ York Minster</td><td>Climb Central Tower (275 steps) for panoramic views. ~£16/adult</td></tr>
-      <tr><td class="time-col">13:00</td><td class="activity-col">🍽️ Shambles Kitchen</td><td>Yorkshire pudding wrap — ~£8/person</td></tr>
-      <tr><td class="time-col">13:30</td><td class="activity-col">🏘️ The Shambles</td><td>4 Harry Potter shops! Diagon Alley inspiration</td></tr>
-      <tr><td class="time-col">15:30</td><td class="activity-col">🍵 Bettys Tea Rooms</td><td>Famous afternoon tea. Scones, clotted cream. ~£20/person. Book ahead!</td></tr>
-      <tr><td class="time-col">17:00</td><td class="activity-col">🏛️ JORVIK Viking Centre</td><td>Ride through a reconstructed Viking city. ~£16/adult</td></tr>
-      <tr><td class="time-col">21:30</td><td class="activity-col">👻 Ghost Walk</td><td>York is Europe's most haunted city! ~£8/person</td></tr>
+      <tr><td class="time-col">8:30</td><td>🚂 London King's Cross → York</td><td>~2 hours. Platform 9¾ photo op at King's Cross before departure!</td></tr>
+      <tr><td class="time-col">11:00</td><td>⛪ York Minster</td><td>Largest Gothic cathedral in N. Europe. Climb Central Tower (275 steps). ~£16/adult</td></tr>
+      <tr><td class="time-col">13:00</td><td>🍽️ Shambles Kitchen</td><td>Pulled pork or Yorkshire pudding wrap — ~£8/person</td></tr>
+      <tr><td class="time-col">13:30</td><td>🏘️ The Shambles</td><td>Diagon Alley inspiration! Four Harry Potter shops. 14yo heaven!</td></tr>
+      <tr><td class="time-col">14:30</td><td>🏰 York City Walls</td><td>Walk medieval walls (longest intact in England). Free. ~1 hour full circuit</td></tr>
+      <tr><td class="time-col">15:30</td><td>🍵 Bettys Tea Rooms</td><td>Famous afternoon tea. Scones, clotted cream. ~£20/person. Book ahead!</td></tr>
+      <tr><td class="time-col">17:00</td><td>🏛️ JORVIK Viking Centre</td><td>Ride through reconstructed Viking city — smells, sights, sounds. ~£16/adult</td></tr>
+      <tr><td class="time-col">20:00</td><td>🍽️ The Star Inn The City</td><td>Riverside modern British, ~£25-35/person</td></tr>
+      <tr><td class="time-col">21:30</td><td>👻 Ghost Walk</td><td>York is Europe's most haunted city! ~£8/person</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 6 -->
-<!-- ============================================================ -->
+<!-- ====== DAY 6 ====== -->
 <h2 id="day6">📍 Day 6: York Castle + Travel to Edinburgh 🚂</h2>
 <div class="day-card">
-  <div class="day-header travel">
-    <span class="day-title">Day 6 — York Castle &amp; Train to Scotland</span>
-    <span class="day-location">📍 York → Edinburgh</span>
-  </div>
+  <div class="day-header travel"><span class="day-title">Day 6 — York Castle &amp; Train to Scotland</span><span>📍 York → Edinburgh</span></div>
   <div class="day-body">
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Clifford%27s_Tower_York_UK.jpg/1280px-Clifford%27s_Tower_York_UK.jpg"
-             alt="Clifford's Tower York" onerror="this.src='https://images.unsplash.com/photo-1558118720-3d2d8c8e7e5e?w=600&h=400&fit=crop'">
-        <div class="img-caption">Clifford's Tower — part of York Castle</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Edinburgh_from_Calton_Hill.jpg/1280px-Edinburgh_from_Calton_Hill.jpg"
-             alt="Edinburgh from Calton Hill" onerror="this.src='https://images.unsplash.com/photo-1506377585622-bedcbb027afc?w=600&h=400&fit=crop'">
-        <div class="img-caption">Edinburgh skyline at sunset from Calton Hill</div>
-      </div>
+      <div><img src="https://images.pexels.com/photos/35729114/pexels-photo-35729114.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="York Castle Museum area"><div class="img-caption">York — Clifford's Tower and Castle Museum, River Ouse boat cruises</div></div>
+      <div><img src="https://images.pexels.com/photos/22204003/pexels-photo-22204003.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Edinburgh skyline"><div class="img-caption">Edinburgh skyline at sunset from Calton Hill — free panoramic views</div></div>
     </div>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">8:30</td><td class="activity-col">🥐 Brew &amp; Brownie</td><td>Best pancakes in York, ~£8-12/person</td></tr>
-      <tr><td class="time-col">9:30</td><td class="activity-col">🏛️ York Castle Museum</td><td>Victorian street, interactive exhibits. ~£15/adult</td></tr>
-      <tr><td class="time-col">11:00</td><td class="activity-col">🚣 River Ouse cruise</td><td>1-hour boat cruise, ~£12/adult</td></tr>
-      <tr><td class="time-col">12:00</td><td class="activity-col">🍽️ The York Roast Co.</td><td>Giant Yorkshire pudding wraps — iconic!</td></tr>
-      <tr><td class="time-col">14:00</td><td class="activity-col">🚂 York → Edinburgh</td><td>~2h 30min. Look for Durham Cathedral (Hogwarts filming location!)</td></tr>
-      <tr><td class="time-col">17:30</td><td class="activity-col">🏙️ Royal Mile stroll</td><td>Street performers, bagpipers, closes and wynds</td></tr>
-      <tr><td class="time-col">19:00</td><td class="activity-col">🍽️ The Outsider</td><td>Castle views, modern Scottish, ~£20-25/person</td></tr>
-      <tr><td class="time-col">20:30</td><td class="activity-col">🌙 Calton Hill</td><td>Panoramic Edinburgh sunset. Free!</td></tr>
+      <tr><td class="time-col">8:30</td><td>🥐 Brew &amp; Brownie</td><td>Best pancakes in York, ~£8-12/person</td></tr>
+      <tr><td class="time-col">9:30</td><td>🏛️ York Castle Museum</td><td>Victorian street recreation, prison cells. ~£15/adult, children free</td></tr>
+      <tr><td class="time-col">11:00</td><td>🚣 River Ouse cruise</td><td>1-hour boat cruise, see York from the water. ~£12/adult</td></tr>
+      <tr><td class="time-col">12:00</td><td>🍽️ The York Roast Co.</td><td>Giant Yorkshire pudding wraps with roast beef — iconic! ~£8/person</td></tr>
+      <tr><td class="time-col">14:00</td><td>🚂 York → Edinburgh</td><td>~2h 30min. Look for Durham Cathedral from the train (Hogwarts filming location!)</td></tr>
+      <tr><td class="time-col">17:30</td><td>🏙️ Royal Mile stroll</td><td>Street performers, bagpipers, closes and wynds</td></tr>
+      <tr><td class="time-col">19:00</td><td>🍽️ The Outsider</td><td>George IV Bridge, Castle views, modern Scottish, ~£20-25/person</td></tr>
+      <tr><td class="time-col">20:30</td><td>🌙 Calton Hill</td><td>Panoramic Edinburgh sunset views. Free! 15-min walk up</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 7 -->
-<!-- ============================================================ -->
+<!-- ====== DAY 7 ====== -->
 <h2 id="day7">📍 Day 7: Edinburgh Castle &amp; Royal Mile 🏰</h2>
 <div class="day-card">
-  <div class="day-header edinburgh">
-    <span class="day-title">Day 7 — Castle, Camera Obscura &amp; Underground City</span>
-    <span class="day-location">📍 Edinburgh, Scotland</span>
-  </div>
+  <div class="day-header edinburgh"><span class="day-title">Day 7 — Castle, Camera Obscura &amp; Underground City</span><span>📍 Edinburgh, Scotland</span></div>
   <div class="day-body">
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Edinburgh_Castle_from_the_Grassmarket.jpg/1280px-Edinburgh_Castle_from_the_Grassmarket.jpg"
-             alt="Edinburgh Castle" onerror="this.src='https://images.unsplash.com/photo-1569154941061-e231e7d7b283?w=600&h=400&fit=crop'">
-        <div class="img-caption">Edinburgh Castle — Crown Jewels, Stone of Destiny, Mons Meg</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Victoria_Street_Edinburgh.jpg/1280px-Victoria_Street_Edinburgh.jpg"
-             alt="Victoria Street Edinburgh" onerror="this.src='https://images.unsplash.com/photo-1572209882223-7db53e3f2c0a?w=600&h=400&fit=crop'">
-        <div class="img-caption">Victoria Street — Diagon Alley inspiration! Rainbow-colored curve</div>
-      </div>
+      <div><img src="https://images.pexels.com/photos/28776205/pexels-photo-28776205.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Edinburgh Castle"><div class="img-caption">Edinburgh Castle — Crown Jewels, Stone of Destiny, Mons Meg cannon, 1 o'clock gun</div></div>
+      <div><img src="https://images.pexels.com/photos/35769517/pexels-photo-35769517.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Victoria Street"><div class="img-caption">Victoria Street — rainbow-colored curve, Diagon Alley inspiration, independent shops</div></div>
     </div>
+    <!-- Edinburgh Map -->
     <div class="map-container" style="height:300px">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17876.977384070865!2d-3.208315979706838!3d55.949579999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7e3e3e3e3e3%3A0x5e9a5e6e9811e7!2sEdinburgh%20Castle!5e0!3m2!1sen!2sus!4v1718500000000"
-        allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8934.498790986241!2d-3.20024867673315!3d55.94927909999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7e3e3e3e3e3%3A0x5e9a5e6e9811e7!2sEdinburgh%20Castle!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy"></iframe>
     </div>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">8:30</td><td class="activity-col">🥯 Mimi's Bakehouse</td><td>Royal Mile, legendary cakes, ~£10/person</td></tr>
-      <tr><td class="time-col">9:30</td><td class="activity-col">🏰 Edinburgh Castle</td><td>Pre-book timed tickets! ~£19.50/adult, £11.50/child. 2.5 hours</td></tr>
-      <tr><td class="time-col">12:30</td><td class="activity-col">🌀 Camera Obscura</td><td>5 floors of optical illusions, mirror maze, rooftop views. ~£18/adult</td></tr>
-      <tr><td class="time-col">14:00</td><td class="activity-col">🍽️ Oink</td><td>Victoria Street hog roast rolls, ~£6/person</td></tr>
-      <tr><td class="time-col">14:30</td><td class="activity-col">🛍️ Victoria Street</td><td>Rainbow shops, Harry Potter stores, Instagram heaven</td></tr>
-      <tr><td class="time-col">16:00</td><td class="activity-col">🕯️ Real Mary King's Close</td><td>Underground 17th-century street. Book ahead! ~£20/person</td></tr>
-      <tr><td class="time-col">19:30</td><td class="activity-col">🍽️ The Witchery</td><td>Gothic candlelit dining. Splurge! ~£40-50/person. Book weeks ahead!</td></tr>
+      <tr><td class="time-col">8:30</td><td>🥯 Mimi's Bakehouse</td><td>Royal Mile, legendary cakes + full Scottish breakfast, ~£10/person</td></tr>
+      <tr><td class="time-col">9:30</td><td>🏰 Edinburgh Castle</td><td>Pre-book timed tickets! Crown Jewels, Stone of Destiny. 2.5 hrs. ~£19.50/adult</td></tr>
+      <tr><td class="time-col">12:30</td><td>🌀 Camera Obscura</td><td>5 floors of optical illusions, mirror maze, rooftop views. ~£18/adult, £14/child</td></tr>
+      <tr><td class="time-col">14:00</td><td>🍽️ Oink</td><td>Victoria Street hog roast rolls, quick &amp; delicious, ~£6/person</td></tr>
+      <tr><td class="time-col">14:30</td><td>🛍️ Victoria Street</td><td>Rainbow-colored shops, HP stores, Instagram heaven for 17yo</td></tr>
+      <tr><td class="time-col">16:00</td><td>🕯️ Real Mary King's Close</td><td>Underground 17th-century street. Book ahead! ~£20/person</td></tr>
+      <tr><td class="time-col">19:30</td><td>🍽️ The Witchery</td><td>Gothic candlelit dining, Scottish beef &amp; seafood. Splurge! ~£40-50/person. Book weeks ahead!</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 8 -->
-<!-- ============================================================ -->
+<!-- ====== DAY 8 ====== -->
 <h2 id="day8">📍 Day 8: Arthur's Seat + Dynamic Earth 🌋</h2>
 <div class="day-card">
-  <div class="day-header edinburgh">
-    <span class="day-title">Day 8 — Extinct Volcano Hike &amp; Museums</span>
-    <span class="day-location">📍 Edinburgh</span>
-  </div>
+  <div class="day-header edinburgh"><span class="day-title">Day 8 — Extinct Volcano Hike &amp; Museums</span><span>📍 Edinburgh</span></div>
   <div class="day-body">
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Arthur%27s_Seat_from_Salisbury_Crags.jpg/1280px-Arthur%27s_Seat_from_Salisbury_Crags.jpg"
-             alt="Arthur's Seat Edinburgh" onerror="this.src='https://images.unsplash.com/photo-1579895578827-fb46323f33da?w=600&h=400&fit=crop'">
-        <div class="img-caption">Arthur's Seat — extinct volcano with 360° views. Free!</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/National_Museum_of_Scotland.jpg/1280px-National_Museum_of_Scotland.jpg"
-             alt="National Museum of Scotland" onerror="this.src='https://images.unsplash.com/photo-1609955357352-5574c0f223f5?w=600&h=400&fit=crop'">
-        <div class="img-caption">National Museum of Scotland — FREE, dinosaurs to fashion</div>
-      </div>
+      <div><img src="https://images.pexels.com/photos/19971310/pexels-photo-19971310.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Arthur's Seat"><div class="img-caption">Arthur's Seat — climb an extinct volcano! 45–60 min up, 360° views. FREE!</div></div>
+      <div><img src="https://images.pexels.com/photos/22204003/pexels-photo-22204003.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Edinburgh from Arthur's Seat"><div class="img-caption">View from Arthur's Seat — Edinburgh, the Firth of Forth, and the Highlands beyond</div></div>
     </div>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">9:00</td><td class="activity-col">⛰️ Arthur's Seat hike</td><td>45–60 min up, 30 min down. 360° views! FREE</td></tr>
-      <tr><td class="time-col">12:00</td><td class="activity-col">🍽️ Ting Thai Caravan</td><td>Quick Thai street food, ~£10/person</td></tr>
-      <tr><td class="time-col">13:00</td><td class="activity-col">🏛️ National Museum of Scotland</td><td>FREE. Dinosaurs, science, fashion, rooftop terrace</td></tr>
-      <tr><td class="time-col">15:00</td><td class="activity-col">🌍 Dynamic Earth</td><td>Interactive Earth science, 4D experiences. ~£16/adult</td></tr>
-      <tr><td class="time-col">17:00</td><td class="activity-col">🛍️ Grassmarket &amp; Victoria St</td><td>Vintage stores, boutiques</td></tr>
-      <tr><td class="time-col">19:00</td><td class="activity-col">🍽️ The Ship on the Shore</td><td>Leith waterfront, seafood. ~£25-30/person</td></tr>
+      <tr><td class="time-col">9:00</td><td>⛰️ Arthur's Seat hike</td><td>Climb the extinct volcano! 45–60 min up, 30 min down. 360° views. FREE!</td></tr>
+      <tr><td class="time-col">12:00</td><td>🍽️ Ting Thai Caravan</td><td>Casual, quick Thai street food near the museum. ~£10/person</td></tr>
+      <tr><td class="time-col">13:00</td><td>🏛️ National Museum of Scotland</td><td>FREE. Dinosaurs, science, fashion, rooftop terrace. 2–3 hours</td></tr>
+      <tr><td class="time-col">15:00</td><td>🌍 Dynamic Earth</td><td>Interactive Earth science: volcanoes, polar ice, space. ~£16/adult, £10/child</td></tr>
+      <tr><td class="time-col">17:00</td><td>🛍️ Grassmarket &amp; Victoria St</td><td>Shopping, vintage stores, independent boutiques</td></tr>
+      <tr><td class="time-col">19:00</td><td>🍽️ The Ship on the Shore</td><td>Leith waterfront, seafood, family-friendly. ~£25-30/person</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 9 -->
-<!-- ============================================================ -->
-<h2 id="day9">📍 Day 9: Edinburgh Zoo or Day Trip 🐼</h2>
+<!-- ====== DAY 9 ====== -->
+<h2 id="day9">📍 Day 9: Edinburgh Flexible Day 🐼</h2>
 <div class="day-card">
-  <div class="day-header edinburgh">
-    <span class="day-title">Day 9 — Flexible Day</span>
-    <span class="day-location">📍 Edinburgh</span>
-  </div>
+  <div class="day-header edinburgh"><span class="day-title">Day 9 — Edinburgh Zoo or Harry Potter Walking Tour</span><span>📍 Edinburgh</span></div>
   <div class="day-body">
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Royal_Yacht_Britannia.jpg/1280px-Royal_Yacht_Britannia.jpg"
-             alt="Royal Yacht Britannia" onerror="this.src='https://images.unsplash.com/photo-1580630885729-1344f4c4afb0?w=600&h=400&fit=crop'">
-        <div class="img-caption">Royal Yacht Britannia — the Queen's former yacht in Leith</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Greyfriars_Kirkyard_Edinburgh.jpg/1280px-Greyfriars_Kirkyard_Edinburgh.jpg"
-             alt="Greyfriars Kirkyard" onerror="this.src='https://images.unsplash.com/photo-1590685543976-94fa0dd7e00e?w=600&h=400&fit=crop'">
-        <div class="img-caption">Greyfriars Kirkyard — Tom Riddle's grave! Harry Potter walking tour</div>
-      </div>
+      <div><img src="https://images.pexels.com/photos/5999515/pexels-photo-5999515.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Royal Mile"><div class="img-caption">Royal Mile — street performers, bagpipers, historic closes, Fringe Festival in August</div></div>
+      <div><img src="https://images.pexels.com/photos/22204003/pexels-photo-22204003.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Edinburgh streets"><div class="img-caption">Edinburgh — Harry Potter walking tour, Greyfriars Kirkyard (Tom Riddle's grave!)</div></div>
     </div>
-    <div class="info-box tip">
-      <strong>💡 Two great options:</strong> <strong>Option A</strong> — Edinburgh Zoo (pandas! penguin parade!) + Portobello Beach. <strong>Option B</strong> — Harry Potter walking tour + Royal Yacht Britannia + Chocolatarium.
-    </div>
+    <div class="info-box tip"><strong>💡 Two great options:</strong> <strong>Option A</strong> — Edinburgh Zoo (pandas! penguin parade!) + Portobello Beach. <strong>Option B</strong> — Harry Potter walking tour + Royal Yacht Britannia + Chocolatarium (make your own chocolate!). If your trip is in August, the Edinburgh Fringe Festival alone makes this city unmissable!</div>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 10 -->
-<!-- ============================================================ -->
+<!-- ====== DAY 10 ====== -->
 <h2 id="day10">📍 Day 10: Edinburgh → Lake District 🚂🏞️</h2>
 <div class="day-card">
-  <div class="day-header lakes">
-    <span class="day-title">Day 10 — Train to Lake District &amp; Lake Cruise</span>
-    <span class="day-location">📍 Edinburgh → Windermere</span>
-  </div>
+  <div class="day-header lakes"><span class="day-title">Day 10 — Train to Lake District &amp; Lake Cruise</span><span>📍 Edinburgh → Windermere</span></div>
   <div class="day-body">
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Windermere_lake.jpg/1280px-Windermere_lake.jpg"
-             alt="Lake Windermere" onerror="this.src='https://images.unsplash.com/photo-1563296559-f92716750f22?w=600&h=400&fit=crop'">
-        <div class="img-caption">Lake Windermere — England's largest lake, open-top cruises</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Beatrix_Potter%27s_Hill_Top.jpg/1280px-Beatrix_Potter%27s_Hill_Top.jpg"
-             alt="Beatrix Potter's Hill Top" onerror="this.src='https://images.unsplash.com/photo-1590337836373-5168d4d3e3e2?w=600&h=400&fit=crop'">
-        <div class="img-caption">Beatrix Potter's Hill Top — where Peter Rabbit was written</div>
-      </div>
+      <div><img src="https://images.pexels.com/photos/13465415/pexels-photo-13465415.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Lake Windermere"><div class="img-caption">Lake Windermere — England's largest lake, open-top cruises, swans at Bowness Pier</div></div>
+      <div><img src="https://images.pexels.com/photos/26821270/pexels-photo-26821270.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="English Cottage"><div class="img-caption">Lake District cottage — Beatrix Potter's Hill Top, charming 17th-century farmhouse</div></div>
     </div>
+    <!-- Windermere Map -->
     <div class="map-container" style="height:300px">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30298.660696689383!2d-2.930061683422185!3d54.37800000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487cb5a5f6c3f8ff%3A0x8b7e4c7f8f8f8f8f!2sWindermere!5e0!3m2!1sen!2sus!4v1718500000000"
-        allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30298.660696689383!2d-2.930061683422185!3d54.37800000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487cb5a5f6c3f8ff%3A0x8b7e4c7f8f8f8f8f!2sWindermere!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy"></iframe>
     </div>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">8:12</td><td class="activity-col">🚂 Edinburgh → Windermere</td><td>~2h 30min (change at Oxenholme). Gorgeous branch line!</td></tr>
-      <tr><td class="time-col">11:30</td><td class="activity-col">🛶 Lake Windermere Cruise</td><td>Bowness → Ambleside, 70 min. ~£12/adult</td></tr>
-      <tr><td class="time-col">14:00</td><td class="activity-col">🏠 Beatrix Potter's Hill Top</td><td>17th-century farmhouse. ~£15/adult</td></tr>
-      <tr><td class="time-col">16:30</td><td class="activity-col">🌲 Orrest Head walk</td><td>Easy 20-min walk, 360° Lake District views!</td></tr>
-      <tr><td class="time-col">19:00</td><td class="activity-col">🍽️ The Lamplighter</td><td>Family-friendly gastropub, ~£15-20/person</td></tr>
+      <tr><td class="time-col">8:12</td><td>🚂 Edinburgh → Windermere</td><td>~2h 30min (change at Oxenholme). Branch line to Windermere is gorgeous!</td></tr>
+      <tr><td class="time-col">11:30</td><td>🛶 Lake Windermere Cruise</td><td>Bowness → Ambleside, 70 min open-top. ~£12/adult, £7/child</td></tr>
+      <tr><td class="time-col">13:00</td><td>🍽️ The Magic Roundabout</td><td>Bowness — burgers, pizza, ~£12/person</td></tr>
+      <tr><td class="time-col">14:00</td><td>🏠 Beatrix Potter's Hill Top</td><td>17th-century farmhouse where Peter Rabbit was written. ~£15/adult</td></tr>
+      <tr><td class="time-col">16:30</td><td>🌲 Orrest Head walk</td><td>Easy 20-min walk from Windermere. 360° Lake District views! Most Instagrammable spot</td></tr>
+      <tr><td class="time-col">19:00</td><td>🍽️ The Lamplighter</td><td>Family-friendly gastropub, ~£15-20/person</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 11 -->
-<!-- ============================================================ -->
+<!-- ====== DAY 11 ====== -->
 <h2 id="day11">📍 Day 11: Lake District Adventures 🥾</h2>
 <div class="day-card">
-  <div class="day-header lakes">
-    <span class="day-title">Day 11 — Grasmere, Ambleside &amp; Kayaking</span>
-    <span class="day-location">📍 Lake District</span>
-  </div>
+  <div class="day-header lakes"><span class="day-title">Day 11 — Grasmere, Ambleside &amp; Kayaking</span><span>📍 Lake District</span></div>
   <div class="day-body">
     <div class="day-images">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Grasmere_Lake_District.jpg/1280px-Grasmere_Lake_District.jpg"
-             alt="Grasmere" onerror="this.src='https://images.unsplash.com/photo-1594301187319-46f4e8b5d4b4?w=600&h=400&fit=crop'">
-        <div class="img-caption">Grasmere — Wordsworth's daffodils, gingerbread, and lake walks</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Bridge_House%2C_Ambleside.jpg/1280px-Bridge_House%2C_Ambleside.jpg"
-             alt="Bridge House Ambleside" onerror="this.src='https://images.unsplash.com/photo-1580829540561-c0d2ccfc8f7b?w=600&h=400&fit=crop'">
-        <div class="img-caption">Bridge House, Ambleside — tiny house on a bridge!</div>
-      </div>
+      <div><img src="https://images.pexels.com/photos/7244515/pexels-photo-7244515.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Grasmere Lake District"><div class="img-caption">Grasmere — Wordsworth's daffodils, lake walks, famous gingerbread shop since 1854</div></div>
+      <div><img src="https://images.pexels.com/photos/13465415/pexels-photo-13465415.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Lake District kayaking"><div class="img-caption">Lake Windermere — kayaking, paddleboarding, open-top Bus 599 along the lake</div></div>
     </div>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">9:00</td><td class="activity-col">🚌 Bus 599 to Grasmere</td><td>Open-top double decker! 30-min gorgeous ride</td></tr>
-      <tr><td class="time-col">9:30</td><td class="activity-col">🍪 Grasmere Gingerbread</td><td>Famous since 1854 — addictive!</td></tr>
-      <tr><td class="time-col">10:00</td><td class="activity-col">🥾 Grasmere Lake walk</td><td>Easy circular walk, 1–2 hours, ducks, daffodils</td></tr>
-      <tr><td class="time-col">12:00</td><td class="activity-col">🍽️ Baldry's Tea Room</td><td>Cream tea, scones, sandwiches. ~£12/person</td></tr>
-      <tr><td class="time-col">14:00</td><td class="activity-col">🛍️ Ambleside</td><td>Bridge House photo, outdoor gear shops</td></tr>
-      <tr><td class="time-col">15:00</td><td class="activity-col">🚣 Kayaking or SUP</td><td>Rent from Windermere Canoe &amp; Kayak. £20-30/hour</td></tr>
-      <tr><td class="time-col">19:00</td><td class="activity-col">🍽️ Final dinner</td><td>The Samling (Michelin-star, ~£80/person) or Boardwalk (casual, ~£18/person)</td></tr>
+      <tr><td class="time-col">9:00</td><td>🚌 Bus 599 to Grasmere</td><td>Open-top double decker! Gorgeous 30-min ride through the fells</td></tr>
+      <tr><td class="time-col">9:30</td><td>🍪 Grasmere Gingerbread</td><td>Famous since 1854 — addictive! ~£5 for a pack</td></tr>
+      <tr><td class="time-col">10:00</td><td>🥾 Grasmere Lake walk</td><td>Easy circular walk, 1–2 hours. Flat, beautiful, ducks, daffodils</td></tr>
+      <tr><td class="time-col">12:00</td><td>🍽️ Baldry's Tea Room</td><td>Cream tea, scones, sandwiches. ~£12/person</td></tr>
+      <tr><td class="time-col">14:00</td><td>🛍️ Ambleside</td><td>Bridge House (tiny house on a bridge — photo!), outdoor gear shops</td></tr>
+      <tr><td class="time-col">15:00</td><td>🚣 Kayaking or SUP</td><td>Rent from Windermere Canoe &amp; Kayak. £20-30/hour. Active teens = happy teens!</td></tr>
+      <tr><td class="time-col">19:00</td><td>🍽️ Final dinner</td><td>The Samling (Michelin-star, ~£80/person) or Boardwalk Bar &amp; Grill (lakeside casual, ~£18/person)</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- DAY 12 -->
-<!-- ============================================================ -->
+<!-- ====== DAY 12 ====== -->
 <h2 id="day12">📍 Day 12: Windermere → London → LAX ✈️</h2>
 <div class="day-card">
-  <div class="day-header travel">
-    <span class="day-title">Day 12 — Journey Home</span>
-    <span class="day-location">📍 Windermere → London → Los Angeles</span>
-  </div>
+  <div class="day-header travel"><span class="day-title">Day 12 — Journey Home</span><span>📍 Windermere → London → LAX</span></div>
   <div class="day-body">
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
-      <tr><td class="time-col">7:30</td><td class="activity-col">🚂 Windermere → London Euston</td><td>~3h 10min. Last train journey through English countryside</td></tr>
-      <tr><td class="time-col">10:50</td><td class="activity-col">🚇 Tube to Heathrow</td><td>Elizabeth Line or Piccadilly Line, ~45 min</td></tr>
-      <tr><td class="time-col">12:00</td><td class="activity-col">🛂 Arrive LHR Terminal 3</td><td>Check in, security, duty-free</td></tr>
-      <tr><td class="time-col">~14:30</td><td class="activity-col">✈️ Depart LHR → LAX</td><td>~10h 25min flight</td></tr>
-      <tr><td class="time-col">~17:30 LA</td><td class="activity-col">🏠 Arrive LAX</td><td>Welcome home! 🇺🇸</td></tr>
+      <tr><td class="time-col">7:00</td><td>🥐 Early breakfast at cottage</td><td>Check out of Puddleduck Cottage</td></tr>
+      <tr><td class="time-col">7:30</td><td>🚂 Windermere → London Euston</td><td>~3h 10min (change at Oxenholme). Last train journey through English countryside</td></tr>
+      <tr><td class="time-col">10:50</td><td>🚇 Tube to Heathrow</td><td>Elizabeth Line or Piccadilly Line, ~45 min. Or Heathrow Express from Paddington</td></tr>
+      <tr><td class="time-col">12:00</td><td>🛂 Arrive LHR Terminal 3</td><td>Check in, security, duty-free shopping</td></tr>
+      <tr><td class="time-col">~14:30</td><td>✈️ Depart LHR → LAX</td><td>~10h 25min flight</td></tr>
+      <tr><td class="time-col">~17:30 LA</td><td>🏠 Arrive LAX</td><td>Welcome home! 🇺🇸</td></tr>
     </table>
   </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- COST BREAKDOWN -->
-<!-- ============================================================ -->
+<!-- ====== COST BREAKDOWN ====== -->
 <h2 id="cost">💰 Complete Cost Breakdown</h2>
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Bank_of_England_%2815558634117%29.jpg/1280px-Bank_of_England_%2815558634117%29.jpg"
-     alt="UK Currency" style="width:100%;max-height:250px;object-fit:cover;border-radius:12px;margin:15px 0;box-shadow:0 2px 12px rgba(0,0,0,0.1);"
-     onerror="this.style.display='none'">
-
 <table class="styled-table">
   <tr><th>Category</th><th>Budget</th><th>Recommended</th><th>Premium</th></tr>
-  <tr><td>Flights (RT, LAX–LHR)</td><td>$1,920 (Norse)</td><td><strong>$2,800 (Virgin)</strong></td><td>$3,600 (BA)</td></tr>
-  <tr><td>UK Trains</td><td>$440 (indiv.)</td><td><strong>$700 (BritRail)</strong></td><td>$770 (Flexi)</td></tr>
-  <tr><td>Local Transport</td><td>$300</td><td><strong>$400</strong></td><td>$500</td></tr>
-  <tr><td>Accommodation</td><td>$3,100 (budget)</td><td><strong>$5,600</strong></td><td>$6,500</td></tr>
-  <tr><td>Sightseeing</td><td>$1,500</td><td><strong>$1,950</strong></td><td>$2,200</td></tr>
-  <tr><td>Food</td><td>$1,800</td><td><strong>$2,450</strong></td><td>$3,000</td></tr>
-  <tr><td>Miscellaneous</td><td>$500</td><td><strong>$800</strong></td><td>$1,000</td></tr>
-  <tr style="font-weight:bold;font-size:1.1em;background:#f0f7ff"><td>GRAND TOTAL</td><td>~$9,560</td><td><strong>~$14,700</strong></td><td>~$17,570</td></tr>
+  <tr><td>✈️ Flights (RT, LAX–LHR)</td><td>$1,920 (Norse)</td><td><strong>$2,800 (Virgin)</strong></td><td>$3,600 (BA)</td></tr>
+  <tr><td>🚂 UK Trains</td><td>$440 (indiv.)</td><td><strong>$700 (BritRail)</strong></td><td>$770 (Flexi)</td></tr>
+  <tr><td>🚇 Local Transport</td><td>$300</td><td><strong>$400</strong></td><td>$500</td></tr>
+  <tr><td>🏨 Accommodation</td><td>$3,100 (budget)</td><td><strong>$5,600</strong></td><td>$6,500</td></tr>
+  <tr><td>🎟️ Sightseeing</td><td>$1,500</td><td><strong>$1,950</strong></td><td>$2,200</td></tr>
+  <tr><td>🍽️ Food</td><td>$1,800</td><td><strong>$2,450</strong></td><td>$3,000</td></tr>
+  <tr><td>📦 Miscellaneous</td><td>$500</td><td><strong>$800</strong></td><td>$1,000</td></tr>
+  <tr style="font-weight:bold;font-size:1.1em;background:#f0f7ff"><td>💰 GRAND TOTAL</td><td>~$9,560</td><td><strong>~$14,700</strong></td><td>~$17,570</td></tr>
 </table>
+<div class="info-box"><strong>🎯 Realistic target for a comfortable family trip: $12,000–$14,000 all-in</strong></div>
 
-<div class="info-box">
-  <strong>🎯 Realistic target for a comfortable family trip: $12,000–$14,000 all-in</strong>
-</div>
-
-<!-- ============================================================ -->
-<!-- PHOTO SPOTS -->
-<!-- ============================================================ -->
-<h2 id="photos">📸 Can't-Miss Family Photo Spots</h2>
+<!-- ====== PHOTO SPOTS + LINKS ====== -->
+<h2 id="photos">📸 Photo Spots &amp; Booking Links</h2>
 <table class="styled-table">
-  <tr><th>Location</th><th>Spot</th><th>Best Time</th></tr>
+  <tr><th>📍 Location</th><th>📸 Best Photo Spot</th><th>Best Time</th></tr>
   <tr><td>🏰 London</td><td>Tower Bridge from Butlers Wharf</td><td>Sunset 🌅</td></tr>
   <tr><td>🏰 London</td><td>Red telephone box with Big Ben behind</td><td>Morning ☀️</td></tr>
-  <tr><td>🏰 London</td><td>WB Studio Tour — Platform 9¾ trolley</td><td>Anytime (expect queue)</td></tr>
-  <tr><td>🏛️ York</td><td>The Shambles (Diagon Alley!)</td><td>Early morning (before crowds)</td></tr>
+  <tr><td>🏰 London</td><td>WB Studio Tour — Platform 9¾ trolley</td><td>Anytime (queue)</td></tr>
+  <tr><td>🏛️ York</td><td>The Shambles (Diagon Alley!)</td><td>Early morning</td></tr>
   <tr><td>🏛️ York</td><td>York Minster West Front</td><td>Golden hour ✨</td></tr>
   <tr><td>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh</td><td>Castle from Princes Street Gardens</td><td>Morning ☀️</td></tr>
-  <tr><td>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh</td><td>Victoria Street (rainbow curve)</td><td>Midday (light hits all colors)</td></tr>
-  <tr><td>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh</td><td>Arthur's Seat summit</td><td>Clear day 🌤️</td></tr>
-  <tr><td>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh</td><td>Dean Village (hidden gem)</td><td>Morning light ✨</td></tr>
+  <tr><td>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh</td><td>Victoria Street (rainbow curve)</td><td>Midday</td></tr>
+  <tr><td>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh</td><td>Arthur's Seat summit — family photo!</td><td>Clear day 🌤️</td></tr>
   <tr><td>🏞️ Windermere</td><td>Orrest Head viewpoint</td><td>Sunset (golden hills) 🌅</td></tr>
   <tr><td>🏞️ Grasmere</td><td>Lake Grasmere with fells behind</td><td>Morning calm 🌤️</td></tr>
 </table>
 
-<!-- ============================================================ -->
-<!-- BOOKING LINKS -->
-<!-- ============================================================ -->
-<h2 id="links">🔗 Quick Reference: All Booking Links</h2>
+<h3 style="margin-top:30px">🔗 Quick Reference: All Booking Links</h3>
 <table class="styled-table">
   <tr><th>What</th><th>Where to Book</th></tr>
   <tr><td>✈️ Flights (Virgin Atlantic)</td><td><a href="https://www.virginatlantic.com" target="_blank">virginatlantic.com</a></td></tr>
@@ -824,38 +501,30 @@
   <tr><td>🎭 West End shows</td><td><a href="https://officiallondontheatre.com" target="_blank">officiallondontheatre.com</a></td></tr>
   <tr><td>🏰 Tower of London</td><td><a href="https://www.hrp.org.uk/tower-of-london" target="_blank">hrp.org.uk/tower-of-london</a></td></tr>
   <tr><td>🏰 Edinburgh Castle</td><td><a href="https://www.edinburghcastle.scot" target="_blank">edinburghcastle.scot</a></td></tr>
+  <tr><td>🕯️ Mary King's Close</td><td><a href="https://www.realmarykingsclose.com" target="_blank">realmarykingsclose.com</a></td></tr>
+  <tr><td>🍽️ The Witchery (dinner)</td><td><a href="https://www.thewitchery.com" target="_blank">thewitchery.com</a></td></tr>
 </table>
 
-<!-- ============================================================ -->
-<!-- BOOKING TIMELINE -->
-<!-- ============================================================ -->
-<h2 id="timeline">⏰ Booking Timeline</h2>
-<div class="day-card">
-  <div class="day-body">
-    <table class="schedule">
-      <tr><th>When</th><th>Action</th></tr>
-      <tr><td class="time-col">NOW</td><td class="activity-col">🔴 Book WB Studio Tour + Puddleduck Cottage + Set Google Flights alerts</td></tr>
-      <tr><td class="time-col">Jan–Feb 2026</td><td class="activity-col">Book flights + London + Edinburgh hotels (free cancellation)</td></tr>
-      <tr><td class="time-col">March 2026</td><td class="activity-col">Book The Grand York + West End + Edinburgh Castle + Tower of London</td></tr>
-      <tr><td class="time-col">April 2026</td><td class="activity-col">Buy BritRail Pass + London Eye + Mary King's Close + Afternoon tea</td></tr>
-      <tr><td class="time-col">May 2026</td><td class="activity-col">UK ETA + Dinner reservations + Offline maps + Travel insurance</td></tr>
-      <tr><td class="time-col">1 week before</td><td class="activity-col">Pack layers! + Print confirmations + Download Trainline app + Notify credit cards</td></tr>
-    </table>
-  </div>
-</div>
+<!-- ====== BOOKING TIMELINE ====== -->
+<h2>⏰ Booking Timeline</h2>
+<div class="day-card"><div class="day-body">
+<table class="schedule">
+  <tr><th>When</th><th>Action</th></tr>
+  <tr><td class="time-col">NOW</td><td>🔴 Book WB Studio Tour + Puddleduck Cottage + Set Google Flights alerts</td></tr>
+  <tr><td class="time-col">Jan–Feb 2026</td><td>Book flights + London + Edinburgh hotels (free cancellation)</td></tr>
+  <tr><td class="time-col">March 2026</td><td>Book The Grand York + West End + Edinburgh Castle + Tower of London</td></tr>
+  <tr><td class="time-col">April 2026</td><td>Buy BritRail Pass + London Eye + Mary King's Close + Afternoon tea</td></tr>
+  <tr><td class="time-col">May 2026</td><td>UK ETA (£10/person) + Dinner reservations + Offline maps + Travel insurance</td></tr>
+  <tr><td class="time-col">1 week before</td><td>Pack layers! + Print confirmations + Download Trainline app + Notify credit cards</td></tr>
+</table>
+</div></div>
 
-<!-- ============================================================ -->
-<!-- FOOTER -->
-<!-- ============================================================ -->
+<!-- ====== FOOTER ====== -->
 <div class="footer">
-  <h2 style="color:white;border:none">🎉 Have an Amazing Trip!</h2>
-  <p style="font-size:1.1em">
-    This itinerary balances family togetherness, teen independence, variety, and smart pacing.<br>
-    London (exciting) → York (charming) → Edinburgh (cultural) → Lake District (relaxing).
-  </p>
-  <p style="margin-top:15px;opacity:0.8">
-    Generated for the Zhang family · Summer 2026 · 🏴󠁧󠁢󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁳󠁣󠁴󠁿
-  </p>
+  <h2 style="color:white;border:none;margin-top:0">🎉 Have an Amazing Trip!</h2>
+  <p style="font-size:1.1em">This itinerary balances family togetherness, teen independence, variety, and smart pacing.<br>
+  London (exciting) → York (charming) → Edinburgh (cultural) → Lake District (relaxing).</p>
+  <p style="margin-top:15px;opacity:0.8">Generated for the Zhang family · Summer 2026 · 🏴󠁧󠁢󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁳󠁣󠁴󠁿</p>
 </div>
 
 </body>
