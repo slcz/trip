@@ -84,6 +84,14 @@
   .toc a:hover { text-decoration: underline; }
 
   @media (max-width: 768px) { h1 { font-size: 2em; } .toc ol { columns: 1; } .map-container { height: 250px; } .day-images { grid-template-columns: 1fr; } }
+
+.route-link {
+  display: inline-block; background: #1a3a5c; color: #fff !important;
+  padding: 2px 12px; border-radius: 4px; text-decoration: none;
+  font-size: 0.85em; white-space: nowrap; transition: background 0.2s;
+}
+.route-link:hover { background: #2e5fa1; }
+
 </style>
 </head>
 <body>
@@ -202,7 +210,7 @@
     <div class="map-container" style="height:250px">
       <iframe src="https://www.google.com/maps?q=Hyde+Park,+London&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🚶 Arrival day: Heathrow Express → Paddington → Marylebone → Hyde Park → Oxford Street</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🚶 Arrival day: Heathrow Express → Paddington → Marylebone → Hyde Park → Oxford Street &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/Heathrow+Airport,+London/Hyde+Park,+London/Oxford+Street,+London/data=!3m1!4b1" target="_blank">🗺️ View Full Route →</a></p>
     
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
@@ -231,7 +239,7 @@
     <div class="map-container" style="height:300px">
       <iframe src="https://www.google.com/maps?q=51.501,-0.130&z=15&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:0.9em;margin-top:5px">🚶 Walking route: Green Park → Buckingham Palace → St James's Park → Westminster Abbey → Big Ben → London Eye (South Bank)</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.9em;margin-top:5px">🚶 Walking route: Green Park → Buckingham Palace → St James's Park → Westminster Abbey → Big Ben → London Eye (South Bank) &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/Green+Park+London/Buckingham+Palace/Westminster+Abbey/London+Eye/data=!3m1!4b1!4m3!4m2!1m0!1m0" target="_blank">🗺️ View Full Route →</a></p>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
       <tr><td class="time-col">9:30</td><td>👑 Buckingham Palace</td><td>Changing of the Guard at 10:45am — arrive early for good spot! Mon/Wed/Fri/Sun in summer</td></tr>
@@ -259,7 +267,7 @@
     <div class="map-container" style="height:250px">
       <iframe src="https://www.google.com/maps?q=Tower+of+London,+UK&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🚇 Day 3 route: Natural History Museum → Borough Market → Tower Bridge → Tower of London</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🚇 Day 3 route: Natural History Museum → Borough Market → Tower Bridge → Tower of London &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/Natural+History+Museum+London/Borough+Market+London/Tower+Bridge/Tower+of+London/data=!3m1!4b1" target="_blank">🗺️ View Full Route →</a></p>
     
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
@@ -285,7 +293,7 @@
     <div class="map-container" style="height:250px">
       <iframe src="https://www.google.com/maps?q=Watford+Junction,+UK&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🚂 Day 4: London Euston → Watford Junction (WB Studio Tour) → Camden Market</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🚂 Day 4: London Euston → Watford Junction (WB Studio Tour) → Camden Market &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/London+Euston/Watford+Junction/Camden+Market+London/data=!3m1!4b1" target="_blank">🗺️ View Full Route →</a></p>
     
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
@@ -311,6 +319,7 @@
     <div class="map-container" style="height:300px">
       <iframe src="https://www.google.com/maps?q=York+Minster,+York,+UK&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
+    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🚶 Day 5: York Station → York Minster → The Shambles → JORVIK → City Walls &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/York+Station/York+Minster/The+Shambles+York/JORVIK+Viking+Centre/data=!3m1!4b1" target="_blank">🗺️ View Full Route →</a></p>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
       <tr><td class="time-col">8:30</td><td>🚂 London King's Cross → York</td><td>~2 hours. Platform 9¾ photo op at King's Cross before departure!</td></tr>
@@ -338,7 +347,7 @@
     <div class="map-container" style="height:250px">
       <iframe src="https://www.google.com/maps?q=Cliffords+Tower,+York,+UK&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🏛️ Day 6: York Castle Museum → River Ouse → York Station → 🚂 Edinburgh</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🏛️ Day 6: York Castle Museum → River Ouse → York Station → 🚂 Edinburgh &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/York+Castle+Museum/River+Ouse+York/York+Railway+Station/data=!3m1!4b1" target="_blank">🗺️ View Full Route →</a></p>
     
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
@@ -367,6 +376,7 @@
     <div class="map-container" style="height:300px">
       <iframe src="https://www.google.com/maps?q=Edinburgh+Castle,+Edinburgh,+UK&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
+    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🚶 Day 7: Edinburgh Castle → Camera Obscura → Victoria Street → Mary King's Close → The Witchery &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/Edinburgh+Castle/Camera+Obscura+Edinburgh/Victoria+Street+Edinburgh/The+Real+Mary+King's+Close/The+Witchery+Edinburgh/data=!3m1!4b1" target="_blank">🗺️ View Full Route →</a></p>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
       <tr><td class="time-col">8:30</td><td>🥯 Mimi's Bakehouse</td><td>Royal Mile, legendary cakes + full Scottish breakfast, ~£10/person</td></tr>
@@ -392,7 +402,7 @@
     <div class="map-container" style="height:250px">
       <iframe src="https://www.google.com/maps?q=Arthurs+Seat,+Edinburgh,+UK&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">⛰️ Day 8: Arthur's Seat hike → National Museum of Scotland → Dynamic Earth → Grassmarket</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">⛰️ Day 8: Arthur's Seat hike → National Museum of Scotland → Dynamic Earth → Grassmarket &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/Arthur's+Seat+Edinburgh/National+Museum+of+Scotland/Dynamic+Earth+Edinburgh/Grassmarket+Edinburgh/data=!3m1!4b1" target="_blank">🗺️ View Full Route →</a></p>
     
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
@@ -418,7 +428,7 @@
     <div class="map-container" style="height:250px">
       <iframe src="https://www.google.com/maps?q=Edinburgh+Zoo,+UK&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🐼 Day 9: Edinburgh Zoo OR Royal Yacht Britannia + Greyfriars Kirkyard (Harry Potter tour)</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🐼 Day 9: Edinburgh Zoo OR Royal Yacht Britannia + Greyfriars Kirkyard (Harry Potter tour) &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/Edinburgh+Zoo/Royal+Yacht+Britannia/Greyfriars+Kirkyard/data=!3m1!4b1" target="_blank">🗺️ View Full Route →</a></p>
 
     <div class="info-box tip"><strong>💡 Two great options:</strong> <strong>Option A</strong> — Edinburgh Zoo (pandas! penguin parade!) + Portobello Beach. <strong>Option B</strong> — Harry Potter walking tour + Royal Yacht Britannia + Chocolatarium (make your own chocolate!). If your trip is in August, the Edinburgh Fringe Festival alone makes this city unmissable!</div>
   </div>
@@ -437,6 +447,7 @@
     <div class="map-container" style="height:300px">
       <iframe src="https://www.google.com/maps?q=Windermere,+Lake+District,+UK&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
+    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🛶 Day 10: Windermere Station → Bowness Pier → Lake Cruise → Hill Top → Orrest Head &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/Windermere+Station/Bowness-on-Windermere/Hill+Top+Beatrix+Potter/data=!3m1!4b1" target="_blank">🗺️ View Full Route →</a></p>
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
       <tr><td class="time-col">8:12</td><td>🚂 Edinburgh → Windermere</td><td>~2h 30min (change at Oxenholme). Branch line to Windermere is gorgeous!</td></tr>
@@ -461,7 +472,7 @@
     <div class="map-container" style="height:250px">
       <iframe src="https://www.google.com/maps?q=Grasmere,+Lake+District,+UK&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🚌 Day 11: Bus 599 → Grasmere → Lake walk → Ambleside → Kayaking on Windermere</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.85em;margin:-15px 0 15px">🚌 Day 11: Bus 599 → Grasmere → Lake walk → Ambleside → Kayaking on Windermere &nbsp; <a class="route-link" href="https://www.google.com/maps/dir/Grasmere/Ambleside/Windermere/data=!3m1!4b1" target="_blank">🗺️ View Full Route →</a></p></p>
     
     <table class="schedule">
       <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
