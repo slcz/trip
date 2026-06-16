@@ -2,10 +2,50 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0;url=UK_12Day_Family_Itinerary.html">
-<title>🇬🇧 12-Day UK Family Trip</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🗺️ Family Travel Itineraries</title>
+<style>
+  :root { --primary: #1a3a5c; --accent: #c9a84c; --bg: #faf9f6; --card-bg: #fff; --text: #2d2d2d; --muted: #666; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; background: var(--bg); color: var(--text); line-height: 1.8; max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  h1 { font-size: 2.4em; text-align: center; margin-bottom: 10px; color: var(--primary); }
+  .subtitle { text-align: center; color: var(--muted); margin-bottom: 40px; font-size: 1.1em; }
+  .card { display: flex; gap: 20px; background: var(--card-bg); border-radius: 12px; padding: 30px; margin: 20px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06); align-items: center; text-decoration: none; color: var(--text); transition: transform 0.2s, box-shadow 0.2s; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  .card .emoji { font-size: 3em; flex-shrink: 0; }
+  .card h2 { color: var(--primary); margin-bottom: 5px; }
+  .card .meta { color: var(--muted); font-size: 0.9em; }
+  .badge { display: inline-block; background: #27ae60; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; margin-left: 8px; font-weight: bold; }
+  .badge.japan { background: #e74c3c; }
+  .footer { text-align: center; margin-top: 50px; color: var(--muted); font-size: 0.85em; }
+  .footer a { color: var(--primary); }
+</style>
 </head>
 <body>
-<p>Redirecting to the itinerary... <a href="UK_12Day_Family_Itinerary.html">Click here</a> if you aren't redirected.</p>
+  <h1>🗺️ Family Travel Itineraries</h1>
+  <p class="subtitle">Beautiful, detailed trip plans with maps, photos, and cost breakdowns</p>
+
+  <a href="Izu_Peninsula_15Day_Family_Itinerary.html" class="card">
+    <div class="emoji">🇯🇵</div>
+    <div>
+      <h2>15-Day Izu Peninsula Road Trip <span class="badge japan">NEW</span></h2>
+      <p>Japan · Aug 1–15, 2026 · Family of 4 · 🚗 Driving Loop</p>
+      <p class="meta">Atami → Ito → Kawazu → Shimoda → Dogashima → Shuzenji → Tokyo</p>
+    </div>
+  </a>
+
+  <a href="UK_12Day_Family_Itinerary.html" class="card">
+    <div class="emoji">🇬🇧</div>
+    <div>
+      <h2>12-Day UK Family Trip</h2>
+      <p>United Kingdom · Summer 2026 · Family of 4 · 🚂 By Train</p>
+      <p class="meta">London → York → Edinburgh → Lake District</p>
+    </div>
+  </a>
+
+  <div class="footer">
+    <p>🤖 Generated with <a href="https://claude.com/claude-code" target="_blank">Claude Code</a> ·
+    <a href="https://github.com/slcz/trip" target="_blank">View on GitHub</a></p>
+  </div>
 </body>
 </html>

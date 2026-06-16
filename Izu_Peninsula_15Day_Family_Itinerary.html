@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🇯🇵 15-Day Izu Peninsula Family Road Trip — Itinerary with Maps & Photos</title>
+<style>
+  :root {
+    --primary: #1a3a5c; --accent: #c9a84c; --bg: #faf9f6;
+    --card-bg: #fff; --text: #2d2d2d; --muted: #666; --border: #e0e0e0;
+    --atami: #e74c3c; --ito: #16a085; --kawazu: #27ae60; --shimoda: #2980b9;
+    --dogashima: #e67e22; --shuzenji: #8e44ad; --tokyo: #c41e3a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; background: var(--bg); color: var(--text); line-height: 1.8; max-width: 1200px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 2.8em; text-align: center; margin: 40px 0 10px; color: var(--primary); }
+  h2 { font-size: 2em; margin: 50px 0 20px; padding-bottom: 8px; border-bottom: 3px solid var(--accent); color: var(--primary); }
+  h3 { font-size: 1.5em; margin: 30px 0 15px; color: var(--primary); }
+  p { margin: 10px 0; }
+  .subtitle { text-align: center; font-size: 1.1em; color: var(--muted); margin-bottom: 30px; }
+
+  .hero-img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+
+  .map-container { width: 100%; height: 400px; border-radius: 12px; overflow: hidden; margin: 20px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid var(--border); }
+  .map-container iframe { width: 100%; height: 100%; border: none; }
+  .day-map { height: 280px; }
+
+  .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+  .summary-card { background: var(--card-bg); border-radius: 12px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center; border-top: 4px solid var(--accent); }
+  .summary-card .icon { font-size: 2.5em; margin-bottom: 10px; }
+  .summary-card .value { font-size: 1.8em; font-weight: bold; color: var(--primary); }
+  .summary-card .label { color: var(--muted); font-size: 0.9em; }
+
+  .day-card { background: var(--card-bg); border-radius: 12px; margin: 25px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden; }
+  .day-header { padding: 20px 25px; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .day-header.atami { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+  .day-header.ito { background: linear-gradient(135deg, #16a085, #0d6b5c); }
+  .day-header.kawazu { background: linear-gradient(135deg, #27ae60, #1a7a3a); }
+  .day-header.shimoda { background: linear-gradient(135deg, #2980b9, #1a5276); }
+  .day-header.dogashima { background: linear-gradient(135deg, #e67e22, #b5600e); }
+  .day-header.shuzenji { background: linear-gradient(135deg, #8e44ad, #5e2d79); }
+  .day-header.tokyo { background: linear-gradient(135deg, #c41e3a, #8b1525); }
+  .day-header.travel { background: linear-gradient(135deg, #6c3483, #4a1d5c); }
+  .day-title { font-size: 1.4em; font-weight: bold; }
+  .day-body { padding: 25px; }
+  .day-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 20px; }
+  .day-images img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
+  .day-images img:hover { transform: scale(1.02); }
+  .img-caption { font-size: 0.85em; color: var(--muted); text-align: center; margin-top: 5px; }
+
+  .schedule { width: 100%; border-collapse: collapse; margin: 15px 0; }
+  .schedule th { background: #f5f5f5; padding: 10px 15px; text-align: left; font-weight: bold; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); }
+  .schedule td { padding: 10px 15px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .schedule tr:hover { background: #fafafa; }
+  .time-col { white-space: nowrap; color: var(--muted); font-size: 0.9em; width: 100px; }
+
+  .info-box { background: #f0f7ff; border-left: 5px solid var(--primary); padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+  .info-box.tip { background: #fff9e6; border-left-color: #e6a700; }
+  .info-box.warning { background: #fff0f0; border-left-color: #d32f2f; }
+  .info-box.festival { background: #fff0f7; border-left-color: #e74c3c; }
+
+  .styled-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+  .styled-table th { background: var(--primary); color: white; padding: 12px 15px; text-align: left; }
+  .styled-table td { padding: 10px 15px; border-bottom: 1px solid var(--border); }
+  .styled-table tr:nth-child(even) { background: #f9f9f9; }
+
+  .route-overview { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: center; margin: 30px 0; padding: 20px; background: var(--card-bg); border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .route-stop { text-align: center; padding: 15px 20px; border-radius: 8px; min-width: 110px; }
+  .route-stop.atami { background: #fde8ec; }
+  .route-stop.ito { background: #d5f5e3; }
+  .route-stop.kawazu { background: #d5f5e3; }
+  .route-stop.shimoda { background: #d6eaf8; }
+  .route-stop.dogashima { background: #fdebd0; }
+  .route-stop.shuzenji { background: #e8daef; }
+  .route-stop.tokyo { background: #fde8ec; }
+  .route-arrow { font-size: 1.5em; color: var(--muted); }
+  .route-stop .city { font-weight: bold; font-size: 1.1em; }
+  .route-stop .nights { font-size: 0.85em; color: var(--muted); }
+
+  .cost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+  .cost-item { background: var(--card-bg); padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .cost-item .amount { font-size: 1.8em; font-weight: bold; color: var(--primary); }
+  .cost-item .cat { color: var(--muted); font-size: 0.9em; }
+  .cost-item .sub { font-size: 0.8em; color: var(--muted); }
+
+  .footer { text-align: center; margin: 50px 0 30px; padding: 30px; background: var(--primary); color: white; border-radius: 12px; }
+  .footer a { color: var(--accent); }
+
+  .toc { background: var(--card-bg); padding: 25px 30px; border-radius: 12px; margin: 30px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .toc h3 { margin-top: 0; }
+  .toc ol { columns: 2; column-gap: 30px; }
+  .toc li { margin: 5px 0; }
+  .toc a { color: var(--primary); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  .route-link { display: inline-block; background: #1a3a5c; color: #fff !important; padding: 2px 12px; border-radius: 4px; text-decoration: none; font-size: 0.85em; white-space: nowrap; transition: background 0.2s; }
+  .route-link:hover { background: #2e5fa1; }
+
+  .budget-tabs { display: flex; gap: 10px; margin: 15px 0; flex-wrap: wrap; }
+  .budget-tab { padding: 8px 18px; border-radius: 20px; border: 2px solid var(--border); background: white; cursor: default; font-size: 0.9em; }
+  .budget-tab.recommended { background: var(--primary); color: white; border-color: var(--primary); font-weight: bold; }
+
+  @media (max-width: 768px) { h1 { font-size: 2em; } .toc ol { columns: 1; } .map-container { height: 250px; } .day-images { grid-template-columns: 1fr; } .route-overview { flex-direction: column; } }
+
+  .festival-badge { display: inline-block; background: #e74c3c; color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: bold; margin-left: 8px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+</style>
+</head>
+<body>
+
+<h1>🇯🇵 15-Day Izu Peninsula Family Road Trip</h1>
+<p class="subtitle">US → Tokyo → Izu Peninsula Loop | Family of 4 (2 Adults + 2 Teens) | August 1–15, 2026</p>
+
+<!-- HERO -->
+<img class="hero-img" src="https://images.pexels.com/photos/31385178/pexels-photo-31385178.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop&dpr=2" alt="Izu Peninsula Coastline">
+
+<!-- ====== OVERALL ROUTE MAP ====== -->
+<h2>🗺️ Overall Route Map</h2>
+<div class="map-container">
+  <iframe src="https://www.google.com/maps/dir/Atami+Japan/Ito+Japan/Kawazu+Japan/Shimoda+Japan/Dogashima+Japan/Shuzenji+Onsen+Japan/Tokyo+Japan?output=embed" allowfullscreen="" loading="lazy"></iframe>
+</div>
+<p style="text-align:center;color:var(--muted);margin-top:8px">📍 Tokyo → 🚗 Atami → 🚗 Ito → 🚗 Kawazu → 🚗 Shimoda → 🚗 Dogashima → 🚗 Shuzenji → 🚗 Tokyo | ~500 km (310 mi) driving loop</p>
+<a href="https://www.google.com/maps/dir/Atami+Japan/Ito+Japan/Kawazu+Japan/Shimoda+Japan/Dogashima+Japan/Shuzenji+Onsen+Japan/Tokyo+Japan" target="_blank" style="display:block;text-align:center;margin-top:5px;" class="route-link">🗺️ View Full Route on Google Maps →</a>
+
+<div class="route-overview">
+  <div class="route-stop tokyo"><div class="city">🛬 Tokyo</div><div class="nights">Day 1 (pick up car)</div></div>
+  <div class="route-arrow">🚗 →</div>
+  <div class="route-stop atami"><div class="city">♨️ Atami</div><div class="nights">Days 1–4 (3 nights)</div></div>
+  <div class="route-arrow">🚗 →</div>
+  <div class="route-stop ito"><div class="city">🌊 Ito</div><div class="nights">Days 4–6 (2 nights)</div></div>
+  <div class="route-arrow">🚗 →</div>
+  <div class="route-stop kawazu"><div class="city">💧 Kawazu</div><div class="nights">Days 6–7 (1 night)</div></div>
+  <div class="route-arrow">🚗 →</div>
+  <div class="route-stop shimoda"><div class="city">🏖️ Shimoda</div><div class="nights">Days 7–9 (2 nights)</div></div>
+  <div class="route-arrow">🚗 →</div>
+  <div class="route-stop dogashima"><div class="city">🌅 Dogashima</div><div class="nights">Days 9–11 (2 nights)</div></div>
+  <div class="route-arrow">🚗 →</div>
+  <div class="route-stop shuzenji"><div class="city">🎋 Shuzenji</div><div class="nights">Days 11–13 (2 nights)</div></div>
+  <div class="route-arrow">🚗 →</div>
+  <div class="route-stop tokyo"><div class="city">🗼 Tokyo</div><div class="nights">Days 13–15 (2 nights)</div></div>
+</div>
+<p style="text-align:center;color:var(--muted)">~500 km (310 miles) driving loop &middot; counter-clockwise: East Coast → South → West Coast → Central Mountains &middot; ~8 hours total drive time over 15 days</p>
+
+<!-- ====== SUMMARY CARDS ====== -->
+<div class="summary-cards">
+  <div class="summary-card"><div class="icon">✈️</div><div class="value">~$3,800</div><div class="label">Flights (US ↔ Tokyo, family of 4)</div></div>
+  <div class="summary-card"><div class="icon">🚗</div><div class="value">~$1,200</div><div class="label">Rental Car (14 days + tolls + fuel)</div></div>
+  <div class="summary-card"><div class="icon">🏠</div><div class="value">~$4,200</div><div class="label">Accommodation (14 nights Airbnb)</div></div>
+  <div class="summary-card"><div class="icon">💰</div><div class="value">~$11,600</div><div class="label">Grand Total (Recommended Tier)</div></div>
+</div>
+
+<!-- ====== TOC ====== -->
+<div class="toc">
+  <h3>📑 Table of Contents</h3>
+  <ol>
+    <li><a href="#flights">✈️ Flights — US to Tokyo</a></li>
+    <li><a href="#car">🚗 Rental Car & Driving Tips</a></li>
+    <li><a href="#accommodation">🏠 Accommodation</a></li>
+    <li><a href="#day1">Day 1: Arrive Tokyo & Drive to Atami</a></li>
+    <li><a href="#day2">Day 2: Atami — Castles, Shrines & Sun Beach</a></li>
+    <li><a href="#day3">Day 3: Atami — Izusan Fireworks Festival 🎆</a></li>
+    <li><a href="#day4">Day 4: Jogasaki Coast & Ito</a></li>
+    <li><a href="#day5">Day 5: Mt. Omuro, Zoo & Atami Fireworks 🎆</a></li>
+    <li><a href="#day6">Day 6: Kawazu Seven Waterfalls</a></li>
+    <li><a href="#day7">Day 7: Shimoda — Beaches & Black Ships</a></li>
+    <li><a href="#day8">Day 8: Shirahama Beach & Cape Irozaki</a></li>
+    <li><a href="#day9">Day 9: West Coast — Toi Gold Mine & Dogashima Sunset</a></li>
+    <li><a href="#day10">Day 10: Dogashima Sea Caves & Matsuzaki</a></li>
+    <li><a href="#day11">Day 11: Shuzenji Onsen — Temples & Bamboo</a></li>
+    <li><a href="#day12">Day 12: Shuzenji Relaxation Day</a></li>
+    <li><a href="#day13">Day 13: Return to Tokyo</a></li>
+    <li><a href="#day14">Day 14: Tokyo Highlights</a></li>
+    <li><a href="#day15">Day 15: Departure</a></li>
+    <li><a href="#costs">💵 Full Cost Breakdown</a></li>
+    <li><a href="#tips">📌 Practical Tips & Food Guide</a></li>
+  </ol>
+</div>
+
+<!-- ====== PART 1: FLIGHTS ====== -->
+<h2 id="flights">✈️ Flights — US to Tokyo</h2>
+
+<div class="info-box tip"><strong>💡 August Savings Tip:</strong> August is one of the cheapest months to fly US→Tokyo. The best week is Aug 31, but mid-August still averages ~$800–950/person from West Coast hubs. Book <strong>Tuesday or Wednesday departures</strong> for the lowest fares.</div>
+
+<table class="styled-table">
+  <tr><th>Option</th><th>Route</th><th>Est. Price (per person)</th><th>Family Total (×4)</th><th>Notes</th></tr>
+  <tr><td><strong>Budget (West Coast)</strong></td><td>LAX/SFO → NRT (ZIPAIR, United)</td><td>~$650–800</td><td>~$2,600–3,200</td><td>ZIPAIR is bare-bones budget; United includes bags</td></tr>
+  <tr><td><strong>Recommended ⭐</strong></td><td>LAX/SFO/SEA → HND (ANA, JAL, Delta)</td><td>~$900–1,100</td><td>~$3,600–4,400</td><td>Full-service, meals, luggage included; Haneda closer to city</td></tr>
+  <tr><td><strong>East Coast / Midwest</strong></td><td>ORD/JFK/ATL → HND or NRT</td><td>~$1,100–1,400</td><td>~$4,400–5,600</td><td>Higher fares from east; consider connecting via West Coast</td></tr>
+</table>
+
+<div class="info-box"><strong>✈️ Recommended:</strong> Book <strong>ANA or JAL</strong> from LAX/SFO to Haneda (HND). Haneda is only ~30 min from central Tokyo vs. ~60 min for Narita. Aim for an afternoon arrival on Aug 1 so you can pick up the rental car and reach Atami by evening.</div>
+
+<!-- ====== PART 2: RENTAL CAR ====== -->
+<h2 id="car">🚗 Rental Car & Driving Tips</h2>
+
+<table class="styled-table">
+  <tr><th>Item</th><th>Details</th><th>Est. Cost (JPY)</th><th>Est. Cost (USD)</th></tr>
+  <tr><td><strong>14-day minivan rental</strong></td><td>Toyota Noah / Nissan Serena (WA class, 7-8 seats)</td><td>¥120,000–180,000</td><td>$800–1,200</td></tr>
+  <tr><td><strong>Expressway tolls</strong></td><td>Tokyo→Atami, plus peninsula toll roads</td><td>¥15,000–25,000</td><td>$100–170</td></tr>
+  <tr><td><strong>Fuel (gasoline)</strong></td><td>~500km over 14 days, ~2 full tanks</td><td>¥15,000–20,000</td><td>$100–135</td></tr>
+  <tr><td><strong>ETC card rental</strong></td><td>Essential for expressway toll gates</td><td>¥300–500</td><td>$2–4</td></tr>
+  <tr><td><strong>Parking</strong></td><td>~¥500–1,500/day at attractions and Airbnbs</td><td>¥10,000–20,000</td><td>$70–135</td></tr>
+  <tr><td><strong>Insurance (CDW + NOC)</strong></td><td>Collision damage waiver + non-operation charge waiver</td><td>¥15,000–25,000</td><td>$100–170</td></tr>
+  <tr style="font-weight:bold;background:#f0f7ff"><td><strong>Total</strong></td><td></td><td><strong>¥180,000–270,000</strong></td><td><strong>$1,200–1,800</strong></td></tr>
+</table>
+
+<div class="info-box"><strong>🚗 Recommended:</strong> Book a <strong>Toyota Noah</strong> through Toyota Rent a Car — best prices for a family minivan. Reserve at least 3-4 weeks before your trip, as August Obon (Aug 8–17) is Japan's busiest domestic travel period. Pick up at Tokyo Station or Shinagawa (easier than navigating out of Narita). Book online: <a href="https://rent.toyota.co.jp/en/" target="_blank">rent.toyota.co.jp</a></div>
+
+<div class="info-box tip"><strong>🪪 Driving in Japan:</strong> You need an <strong>International Driving Permit (IDP)</strong> based on the 1949 Geneva Convention. Get it from AAA ($20) before you leave the US. Japan drives on the <strong>left</strong>. Most road signs are bilingual (Japanese/English). Google Maps works great for navigation.</div>
+
+<!-- ====== PART 3: ACCOMMODATION ====== -->
+<h2 id="accommodation">🏠 Accommodation — Airbnb Rentals by Area</h2>
+
+<p>All accommodations are <strong>entire-house Airbnb rentals</strong> for a family of 4. August is peak season — book <strong>2–3 months in advance</strong> for the best selection.</p>
+
+<table class="styled-table">
+  <tr><th>Area</th><th>Nights</th><th>Dates</th><th>Price/Night</th><th>Total</th><th>What to Look For</th></tr>
+  <tr>
+    <td><strong>Atami</strong></td><td>3</td><td>Aug 1–4</td><td>$250–350</td><td>$750–1,050</td>
+    <td>Ocean-view house, near Atami Sun Beach, parking included. Look for properties with a terrace or balcony overlooking the bay.</td>
+  </tr>
+  <tr>
+    <td><strong>Ito / Izu Kogen</strong></td><td>2</td><td>Aug 4–6</td><td>$250–350</td><td>$500–700</td>
+    <td>Near Jogasaki Coast, Mt. Omuro area. Many rentals here have ocean views and BBQ decks. Izu Kogen area is ideal.</td>
+  </tr>
+  <tr>
+    <td><strong>Kawazu</strong></td><td>1</td><td>Aug 6–7</td><td>$200–300</td><td>$200–300</td>
+    <td>Near the waterfalls. Simple but comfortable — this is a short stop between Ito and Shimoda.</td>
+  </tr>
+  <tr>
+    <td><strong>Shimoda</strong></td><td>2</td><td>Aug 7–9</td><td>$250–400</td><td>$500–800</td>
+    <td>Near Shirahama or Iritahama Beach. Look for beach-access properties. Cabana Iritahama and Reigetsu are top-rated.</td>
+  </tr>
+  <tr>
+    <td><strong>Dogashima / Nishi-Izu</strong></td><td>2</td><td>Aug 9–11</td><td>$200–300</td><td>$400–600</td>
+    <td>Sunset views over Suruga Bay. Quieter area — look for properties with ocean-facing windows.</td>
+  </tr>
+  <tr>
+    <td><strong>Shuzenji</strong></td><td>2</td><td>Aug 11–13</td><td>$250–400</td><td>$500–800</td>
+    <td>Traditional Japanese house with private onsen bath. Near Shuzenji Temple and bamboo path. Izu Serenity (4.99⭐) is the gold standard here.</td>
+  </tr>
+  <tr>
+    <td><strong>Tokyo</strong></td><td>2</td><td>Aug 13–15</td><td>$300–450</td><td>$600–900</td>
+    <td>Central Tokyo (Shinjuku/Shibuya area). Modern apartment with washing machine. Close to train station for final sightseeing.</td>
+  </tr>
+  <tr style="font-weight:bold;background:#f0f7ff"><td><strong>Total</strong></td><td><strong>14</strong></td><td></td><td></td><td><strong>$3,450–5,150</strong></td><td>Average ~$275/night at Recommended tier</td></tr>
+</table>
+
+<div class="info-box tip"><strong>🏠 Airbnb Booking Tip:</strong> Search for "一棟貸し" (whole house rental) on Airbnb Japan for the best family options. Many include private onsen baths. Book by <strong>May–June 2026</strong> for the best August availability. Recommended listings: <em>Izu Serenity: Fuji-View Retreat with Private Onsen</em> (Shuzenji, 4.99⭐), <em>Cabana Iritahama</em> (Shimoda, 4.94⭐), <em>Ocean View & Hot Springs</em> (Atami, 4.97⭐).</div>
+
+<!-- ====== DAY BY DAY ====== -->
+<h2>📅 Day-by-Day Itinerary</h2>
+
+<!-- DAY 1 -->
+<div class="day-card" id="day1">
+  <div class="day-header atami">
+    <div class="day-title">Day 1 — Sat Aug 1: Touchdown Tokyo & Coastal Drive to Atami</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/31385308/pexels-photo-31385308.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Arrival in Japan"><div class="img-caption">Touch down in Japan — the adventure begins!</div></div>
+      <div><img src="https://images.pexels.com/photos/35589820/pexels-photo-35589820.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Atami Coast"><div class="img-caption">Atami's coastal evening glow</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Atami+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Haneda+Airport+Tokyo/Atami+Japan" target="_blank" class="route-link">🗺️ View Route: Haneda → Atami →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">14:00–15:00</td><td>🛬 Arrive Haneda (HND)</td><td>Immigration, luggage claim. Pro-tip: fill out Visit Japan Web QR codes <strong>before</strong> departure for faster entry.</td></tr>
+      <tr><td class="time-col">15:00–15:30</td><td>🪪 Immigration & Customs</td><td>~30 min with QR codes, can be 60+ without. Summer arrival — lines are moderate.</td></tr>
+      <tr><td class="time-col">15:30–16:00</td><td>🚗 Pick up Rental Car</td><td>Pre-arranged pickup at Haneda or take limousine bus to Shinagawa for pickup. Get the ETC card installed.</td></tr>
+      <tr><td class="time-col">16:00–18:00</td><td>🛣️ Drive to Atami</td><td>~100 km via Tomei Expressway → Odawara-Atsugi Road. Scenic coastal approach into Atami. Stop at a <em>michi-no-eki</em> (rest stop) for snacks.</td></tr>
+      <tr><td class="time-col">18:00–19:00</td><td>🏠 Settle into Airbnb</td><td>Unpack, freshen up, enjoy the ocean view from your rental.</td></tr>
+      <tr><td class="time-col">19:00–20:30</td><td>🍣 Dinner</td><td>Casual first-night dinner near Atami Station or at a local <em>izakaya</em>. Try <em>kinmedai</em> (golden eye snapper) — Izu's signature fish.</td></tr>
+      <tr><td class="time-col">20:30–21:30</td><td>🌊 Evening Stroll</td><td>Walk along Atami Sun Beach and the palm-tree-lined promenade. The beach is lit up beautifully at night.</td></tr>
+    </table>
+    <div class="info-box tip"><strong>🚗 Pro Tip:</strong> If your flight arrives Narita (NRT) instead, add ~1 extra hour to the drive. Consider taking the Narita Express to Tokyo Station and picking up your car there to avoid the long drive through Tokyo traffic.</div>
+  </div>
+</div>
+
+<!-- DAY 2 -->
+<div class="day-card" id="day2">
+  <div class="day-header atami">
+    <div class="day-title">Day 2 — Sun Aug 2: Atami Castle, Shrines & Sun Beach</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/569893/pexels-photo-569893.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Atami Castle"><div class="img-caption">Atami Castle — perched above the Pacific</div></div>
+      <div><img src="https://images.pexels.com/photos/355469/pexels-photo-355469.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Mount Fuji view"><div class="img-caption">On clear days, Mt. Fuji peeks over the horizon</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Atami+Castle+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Atami+Sun+Beach/Atami+Castle/Kinomiya+Shrine/Atami+Bay" target="_blank" class="route-link">🗺️ View Route: Atami Highlights →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–10:00</td><td>🥐 Breakfast</td><td>Grab pastries and coffee at a local bakery. Many Airbnbs will have kitchen facilities — pick up supplies at a konbini (7-Eleven/Lawson/FamilyMart).</td></tr>
+      <tr><td class="time-col">10:00–11:30</td><td>🏯 Atami Castle</td><td>Built in 1959, this hilltop castle has a museum, a top-floor observation deck, and castle-themed VR experiences the teens will enjoy. <strong>¥1,200/adult, ¥600/child.</strong></td></tr>
+      <tr><td class="time-col">11:30–12:00</td><td>🚡 Atami Ropeway</td><td>Take the ropeway down from the castle — panoramic views of Atami Bay and (on clear days) Mt. Fuji and the Izu Islands.</td></tr>
+      <tr><td class="time-col">12:00–13:30</td><td>🍜 Lunch</td><td>Seafood lunch near Atami Port. Try the <em>kaisen-don</em> (sashimi rice bowl) at one of the port-side restaurants.</td></tr>
+      <tr><td class="time-col">13:30–14:30</td><td>⛩️ Kinomiya Shrine</td><td>Home to a 2,000-year-old sacred camphor tree — walk through its hollow trunk for good luck and a longer life. One of Japan's <em>power spots</em>.</td></tr>
+      <tr><td class="time-col">14:30–17:00</td><td>🏖️ Atami Sun Beach</td><td>Swim, sunbathe, or just relax. The main beach is clean, family-friendly, with gentle waves. Beach huts rent umbrellas and floats.</td></tr>
+      <tr><td class="time-col">17:00–18:00</td><td>🚿 Rest & Freshen Up</td><td>Head back to the Airbnb to shower and change.</td></tr>
+      <tr><td class="time-col">18:30–20:00</td><td>🍱 Dinner</td><td>Atami has excellent sushi and <em>kaiseki</em> restaurants. For a casual option, try the seafood BBQ spots near the beach where you grill your own.</td></tr>
+      <tr><td class="time-col">20:00–21:00</td><td>🌙 Night Walk</td><td>Atami's <em>Oyu Geyser</em> and the illuminated promenade make for a pleasant post-dinner stroll.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- DAY 3 — FIREWORKS -->
+<div class="day-card" id="day3">
+  <div class="day-header atami">
+    <div class="day-title">Day 3 — Mon Aug 3: MOA Museum & Izusan Fireworks Festival <span class="festival-badge">🎆 FIREWORKS</span></div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/35100545/pexels-photo-35100545.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Japanese museum"><div class="img-caption">MOA Museum — world-class art overlooking the sea</div></div>
+      <div><img src="https://images.pexels.com/photos/14802833/pexels-photo-14802833.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Fireworks"><div class="img-caption">The Izusan fireworks light up Atami Bay</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=MOA+Museum+Atami+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/MOA+Museum+Atami/Izusan+Coast+Atami" target="_blank" class="route-link">🗺️ View Route: Museum → Fireworks →</a>
+
+    <div class="info-box festival"><strong>🎆 Izusan Onsen Marine Fireworks Festival</strong> — The 75th edition! Known as the "matchmaking fireworks" (縁結び花火). ~2,000 shots including rapid-fire star mines and a gold-and-silver Niagara finale. Held rain or shine. <strong>Time: 20:20–20:45. Free viewing.</strong></div>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–10:00</td><td>🥐 Leisurely Breakfast</td><td>Sleep in a bit — it's vacation! Breakfast at your Airbnb.</td></tr>
+      <tr><td class="time-col">10:00–12:30</td><td>🎨 MOA Museum of Art</td><td>World-class collection of Japanese and East Asian art. The museum itself is a modernist masterpiece by architect Kikutake Kiyonori, with a stunning escalator entrance and panoramic ocean views. <strong>¥1,600/adult, students ¥1,000.</strong> Highlights: Ogata Korin's Red and White Plum Blossoms screen.</td></tr>
+      <tr><td class="time-col">12:30–14:00</td><td>🍵 Lunch at MOA</td><td>The museum café has incredible ocean views. Try the matcha and Japanese sweets set.</td></tr>
+      <tr><td class="time-col">14:00–16:00</td><td>🏖️ Afternoon Beach Time</td><td>Relax at Atami Sun Beach or explore the nearby <strong>Akao Herb & Rose Garden</strong> (¥1,200) for flower fields and ocean vistas.</td></tr>
+      <tr><td class="time-col">16:00–17:30</td><td>🚿 Rest & Prepare</td><td>Head back to freshen up. Pick up snacks, drinks, and a picnic blanket from a konbini for the fireworks.</td></tr>
+      <tr><td class="time-col">17:30–18:30</td><td>🍣 Early Dinner</td><td>Eat early — restaurants near the fireworks viewing area will be packed. Grab <em>ekiben</em> (station bento) or convenience store feast for a beach picnic.</td></tr>
+      <tr><td class="time-col">18:30–19:30</td><td>🎆 Stake Out Spot</td><td>Walk to the Izusan Coast viewing area (15–20 min). Arrive <strong>1+ hour early</strong> for a good spot. Bring a beach mat or blanket.</td></tr>
+      <tr><td class="time-col">20:20–20:45</td><td>🎆 <strong>IZUSAN FIREWORKS!</strong></td><td>The grand show — fireworks reflected in the bay, echoing off the mountains. The natural amphitheater effect makes these some of Japan's most dramatic fireworks.</td></tr>
+      <tr><td class="time-col">21:00–21:30</td><td>🚶 Walk Back</td><td>Expect crowds leaving. Walk slowly, soak in the festive atmosphere. Grab a cold drink at a vending machine.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- DAY 4 — ITO -->
+<div class="day-card" id="day4">
+  <div class="day-header ito">
+    <div class="day-title">Day 4 — Tue Aug 4: Jogasaki Coast & Ito</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/23441144/pexels-photo-23441144.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Jogasaki Coast"><div class="img-caption">The dramatic Jogasaki Coast — volcanic cliffs meet the Pacific</div></div>
+      <div><img src="https://images.pexels.com/photos/18662840/pexels-photo-18662840.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Izu ocean view"><div class="img-caption">Crystal-clear Izu waters</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Jogasaki+Coast+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Atami+Japan/Jogasaki+Coast/Ito+Japan" target="_blank" class="route-link">🗺️ View Route: Atami → Jogasaki → Ito →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–9:30</td><td>🚗 Drive to Ito</td><td>~30 min south along the coast on Route 135. Easy, scenic drive.</td></tr>
+      <tr><td class="time-col">9:30–10:00</td><td>🏠 Drop Bags</td><td>Check into your Ito/Izu Kogen Airbnb. Leave bags even if you can't check in yet.</td></tr>
+      <tr><td class="time-col">10:00–13:00</td><td>🥾 Jogasaki Coast Hike</td><td>~4 km coastal trail along dramatic black volcanic cliffs. The highlight is the <strong>Kadowaki Suspension Bridge</strong> (48m long, 23m high) spanning a deep gorge over crashing waves. Easy to moderate — suitable for teens. Park at Izu Oceanic Park and follow the signs.</td></tr>
+      <tr><td class="time-col">13:00–14:00</td><td>🍱 Picnic Lunch</td><td>Pack a konbini lunch or eat at the Izu Oceanic Park café. There are picnic tables with ocean views near the suspension bridge.</td></tr>
+      <tr><td class="time-col">14:00–15:30</td><td>🗼 Kadowaki Lighthouse</td><td>Continue the trail to the lighthouse at the tip of the coast. Great photo spot — teens will love the dramatic cliff-edge views.</td></tr>
+      <tr><td class="time-col">15:30–16:00</td><td>🚗 Drive to Airbnb</td><td>Short drive to your Ito/Izu Kogen rental.</td></tr>
+      <tr><td class="time-col">16:00–18:00</td><td>🏠 Relax</td><td>Settle into your new Airbnb. Many Izu Kogen rentals have BBQ decks — pick up supplies for a family grill night.</td></tr>
+      <tr><td class="time-col">18:00–20:00</td><td>🥩 BBQ Dinner</td><td>Cook yakiniku (Japanese BBQ) at your Airbnb. Hit a local supermarket for premium wagyu, sausages, vegetables, and sauces.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- DAY 5 — MT OMURO + FIREWORKS -->
+<div class="day-card" id="day5">
+  <div class="day-header ito">
+    <div class="day-title">Day 5 — Wed Aug 5: Mt. Omuro, Zoo & Atami Marine Fireworks <span class="festival-badge">🎆 FIREWORKS</span></div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/33341973/pexels-photo-33341973.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Mount Omuro"><div class="img-caption">Mt. Omuro — Izu's iconic "matcha bowl" volcano</div></div>
+      <div><img src="https://images.pexels.com/photos/15169963/pexels-photo-15169963.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Izu Shaboten Zoo"><div class="img-caption">Capybaras and cactus at Izu Shaboten Zoo</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Mount+Omuro+Ito+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Mt+Omuro+Ito/Izu+Shaboten+Zoo/Atami+Sun+Beach" target="_blank" class="route-link">🗺️ View Route: Mt. Omuro → Zoo → Atami Fireworks →</a>
+
+    <div class="info-box festival"><strong>🎆 Atami Marine Fireworks Festival</strong> — The famous summer series! Tonight's show launches from Atami Bay. The mountains create a natural amphitheater, making the sound BOOM like nowhere else. The "Niagara in the Sky" finale is legendary. <strong>Time: 20:20–20:45.</strong> Only a 30-min drive back to Atami from Ito!</div>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">8:30–9:00</td><td>🥐 Early Breakfast</td><td>Quick breakfast — Mt. Omuro gets busy by late morning.</td></tr>
+      <tr><td class="time-col">9:00–11:00</td><td>🌋 Mt. Omuro</td><td>Take the chairlift (¥700/adult, ¥400/child) to the 580m summit. Walk the 1km crater rim for <strong>360° panoramic views</strong> — Mt. Fuji to the north, Izu Islands to the south. On clear summer mornings, this is THE spot for Fuji views. The crater itself is an archery range (you can try <em>kyudo</em>!).</td></tr>
+      <tr><td class="time-col">11:00–12:00</td><td>🌵 Izu Shaboten Zoo</td><td>Right next to Mt. Omuro. Famous for its <strong>free-roaming capybaras</strong> (yes, you can pet them) and cactus greenhouse. The teens will love the quirky animal interactions. <strong>¥2,400/adult, ¥1,200/child.</strong></td></tr>
+      <tr><td class="time-col">12:00–13:00</td><td>🍜 Lunch</td><td>Eat at the zoo café or a nearby soba shop. Try <em>wasabi soba</em> — Izu is Japan's wasabi capital.</td></tr>
+      <tr><td class="time-col">13:00–14:30</td><td>🏔️ Komuroyama (optional)</td><td>If Omuro is cloudy (summer haze), try Komuroyama nearby — a smaller peak with a single-person cable car (¥500 one-way) and great views.</td></tr>
+      <tr><td class="time-col">14:30–17:00</td><td>🚿 Rest & Beach</td><td>Rest at your Airbnb or hit Ito Orange Beach for a swim.</td></tr>
+      <tr><td class="time-col">17:00–18:30</td><td>🚗 Drive to Atami</td><td>~30 min drive back north. Park early — fireworks nights bring traffic. Aim to arrive by 18:30 to find parking.</td></tr>
+      <tr><td class="time-col">18:30–19:30</td><td>🍣 Early Dinner</td><td>Grab food near Atami Station or bring a picnic to the beach.</td></tr>
+      <tr><td class="time-col">19:30–20:20</td><td>🏖️ Find Viewing Spot</td><td>Atami Sun Beach or Atami Kaihin Park. The beach fills up — stake your spot early.</td></tr>
+      <tr><td class="time-col">20:20–20:45</td><td>🎆 <strong>ATAMI MARINE FIREWORKS!</strong></td><td>The iconic "Niagara in the Sky" — a curtain of fireworks cascading across the entire bay. With the mountain backdrop, this is one of Japan's best summer fireworks experiences.</td></tr>
+      <tr><td class="time-col">21:00–21:30</td><td>🚗 Drive back to Ito</td><td>Traffic will be heavy leaving. Take it slow, or grab a late-night ramen in Atami while the crowds disperse.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- DAY 6 — KAWAZU -->
+<div class="day-card" id="day6">
+  <div class="day-header kawazu">
+    <div class="day-title">Day 6 — Thu Aug 6: Kawazu Seven Waterfalls & Wasabi Fields</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/10463587/pexels-photo-10463587.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Kawazu Waterfall"><div class="img-caption">Kawazu Nanadaru — seven falls in a lush gorge</div></div>
+      <div><img src="https://images.pexels.com/photos/28219864/pexels-photo-28219864.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Japanese nature"><div class="img-caption">The cool, green interior of Izu's mountains</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Kawazu+Nanadaru+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Ito+Japan/Kawazu+Nanadaru+Japan/Joren+Falls+Japan" target="_blank" class="route-link">🗺️ View Route: Ito → Waterfalls → Joren Falls →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–10:00</td><td>🚗 Drive to Kawazu</td><td>~1 hour south from Ito along the coastal highway. Beautiful drive with ocean on your left.</td></tr>
+      <tr><td class="time-col">10:00–10:30</td><td>🏠 Drop Bags</td><td>Check into your Kawazu Airbnb or leave luggage.</td></tr>
+      <tr><td class="time-col">10:30–12:30</td><td>💧 Kawazu Seven Waterfalls</td><td>Walk the 1.5 km trail along the Kawazu River through a basalt gorge. Seven distinct waterfalls — each with its own character. Bronze statues from <em>The Izu Dancer</em> line the path. The <strong>double-spiral Kawazu Nanadaru Loop Bridge</strong> (45m diameter!) is an engineering marvel you'll pass on the drive up. <strong>Free entry.</strong></td></tr>
+      <tr><td class="time-col">12:30–13:30</td><td>🍱 Lunch</td><td>Riverside soba shop near the falls. Try <em>wasabi-don</em> (fresh wasabi over rice with bonito flakes) — the wasabi here is the real deal, grown in mountain spring water.</td></tr>
+      <tr><td class="time-col">13:30–14:30</td><td>🌿 Joren Falls</td><td>A stunning 25m waterfall plunging into a deep blue pool. The light filtering through the forest creates an almost magical atmosphere. Great photo spot. You can try <strong>trout fishing</strong> here — they'll salt-grill your catch!</td></tr>
+      <tr><td class="time-col">14:30–16:00</td><td>🌱 Wasabi Fields</td><td>Visit the terraced wasabi fields near the waterfalls. The Amagi area produces some of Japan's finest wasabi. Many farms have small shops where you can buy fresh wasabi root (great souvenir) and wasabi-flavored snacks — wasabi ice cream is a must-try!</td></tr>
+      <tr><td class="time-col">16:00–18:00</td><td>🏠 Settle In</td><td>Head to your Airbnb. Kawazu is quieter — enjoy the mountain-valley peace.</td></tr>
+      <tr><td class="time-col">18:00–20:00</td><td>🍲 Dinner</td><td>Kawazu has excellent little family-run restaurants. Try a <em>wasabi shabu-shabu</em> if you can find it — thinly sliced pork in wasabi-infused broth.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- DAY 7 — SHIMODA -->
+<div class="day-card" id="day7">
+  <div class="day-header shimoda">
+    <div class="day-title">Day 7 — Fri Aug 7: Shimoda — Beaches, Black Ships & Aquarium</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/18662840/pexels-photo-18662840.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Shimoda Beach"><div class="img-caption">Shirahama Beach — Izu's crown jewel</div></div>
+      <div><img src="https://images.pexels.com/photos/22739784/pexels-photo-22739784.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Perry Road Shimoda"><div class="img-caption">Historic Perry Road — where Japan opened to the world</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Shimoda+Shizuoka+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Kawazu+Japan/Shimoda+Aquarium/Perry+Road+Shimoda/Iritahama+Beach+Shimoda" target="_blank" class="route-link">🗺️ View Route: Kawazu → Aquarium → Perry Road → Iritahama →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–9:30</td><td>🚗 Drive to Shimoda</td><td>~30 min south from Kawazu. Easy coastal drive.</td></tr>
+      <tr><td class="time-col">9:30–10:00</td><td>🏠 Drop Bags</td><td>Check into your Shimoda Airbnb near Shirahama or Iritahama Beach.</td></tr>
+      <tr><td class="time-col">10:00–12:00</td><td>🐬 Shimoda Aquarium</td><td>Small but excellent aquarium. The highlight: <strong>dolphin swimming programs</strong> (book ahead) and the underwater tunnel. Great for families. <strong>¥2,100/adult, ¥1,050/child.</strong></td></tr>
+      <tr><td class="time-col">12:00–13:30</td><td>🍕 Lunch at Iritahama</td><td>Head to <strong>FermenCo.</strong> at Iritahama Beach — a wood-fired sourdough pizzeria right on the sand. Try the <em>quattro formaggi with local honey</em>. One of the most memorable meals of your trip.</td></tr>
+      <tr><td class="time-col">13:30–15:30</td><td>⛵ Perry Road & History</td><td>Walk along the willow-lined canal where Commodore Perry walked when he opened Japan to the world in 1854. Visit the <strong>Ryosenji Temple</strong> where the Treaty of Kanagawa was signed. The <strong>Shimoda History Museum</strong> tells the fascinating Black Ships story.</td></tr>
+      <tr><td class="time-col">15:30–17:30</td><td>🏖️ Iritahama Beach</td><td>Often called one of Japan's most beautiful beaches. White sand, blue water, less crowded than Shirahama. Perfect for a late-afternoon swim.</td></tr>
+      <tr><td class="time-col">17:30–19:00</td><td>🚿 Freshen Up</td><td>Shower at your Airbnb. Sunset walk on the beach if you're up for it.</td></tr>
+      <tr><td class="time-col">19:00–21:00</td><td>🐟 Seafood Dinner</td><td><strong>Tsuji</strong> — Shimoda's legendary <em>kinmedai</em> restaurant (reservations recommended). Their braised golden eye snapper is life-changing. The teens will love it — the fish is sweet, tender, and served in a rich soy-mirin broth. Budget ~¥5,000/person for the full course.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- DAY 8 — SHIRAHAMA BEACH -->
+<div class="day-card" id="day8">
+  <div class="day-header shimoda">
+    <div class="day-title">Day 8 — Sat Aug 8: Shirahama Beach & Cape Irozaki</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/23441144/pexels-photo-23441144.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Shirahama white sand"><div class="img-caption">Shirahama's AAA-rated crystal waters</div></div>
+      <div><img src="https://images.pexels.com/photos/31385178/pexels-photo-31385178.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Cape Irozaki"><div class="img-caption">Cape Irozaki — where the Izu Peninsula ends</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Shirahama+Beach+Shimoda+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Shirahama+Beach+Shimoda/Ryugu+Sea+Cave/Cape+Irozaki" target="_blank" class="route-link">🗺️ View Route: Shirahama → Sea Cave → Cape Irozaki →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–9:30</td><td>🥐 Breakfast</td><td>Pastries and coffee at <strong>Tofuya Bakery & Table</strong> — a stylish café with a foot-bath terrace (<em>ashiyu</em>) where you soak your feet while eating. Pure Izu bliss.</td></tr>
+      <tr><td class="time-col">9:30–13:00</td><td>🏖️ Shirahama Beach</td><td>The crown jewel of Izu beaches. AAA-rated water quality, white sand stretching 800m. The red torii gate at the north end makes it one of Japan's most photogenic beaches. Rent umbrellas and beach chairs (~¥2,000/set). Swim, snorkel, or just float in the crystal-clear water.</td></tr>
+      <tr><td class="time-col">13:00–14:00</td><td>🍤 Beach Lunch</td><td>Beachside cafés and food stalls. The <em>ika-yaki</em> (grilled squid on a stick) from the beach vendors is a must.</td></tr>
+      <tr><td class="time-col">14:00–15:00</td><td>🕳️ Ryugu Sea Cave</td><td>Drive 10 min to the natural sea cave. The opening is <strong>heart-shaped</strong> when viewed from above — a viral Instagram spot. You can take a boat ride through the cave (~¥1,500/person).</td></tr>
+      <tr><td class="time-col">15:00–17:00</td><td>🗼 Cape Irozaki</td><td>The southernmost tip of the Izu Peninsula. Dramatic cliffs, a white lighthouse, and views stretching to the Izu Islands. The coastal trail along the cape is stunning in late-afternoon light. Great whale-watching potential in summer.</td></tr>
+      <tr><td class="time-col">17:00–19:00</td><td>🚿 Rest & Relax</td><td>Head back to the Airbnb. If your rental has a BBQ, tonight's the night for a beachside grill session.</td></tr>
+      <tr><td class="time-col">19:00–21:00</td><td>🍣 Farewell Shimoda Dinner</td><td>Try a different seafood spot, or go casual at an <em>izakaya</em> near Shimoda Station. Order <em>ise-ebi</em> (Japanese spiny lobster) if it's in season.</td></tr>
+    </table>
+    <div class="info-box tip"><strong>💡 Beach Day Tip:</strong> Shirahama gets busy on weekends (today is Saturday). Arrive before 9:30 to claim a good spot. The left side near the torii gate tends to be slightly less crowded. Water shoes recommended — some areas have small rocks.</div>
+  </div>
+</div>
+
+<!-- DAY 9 — DOGASHIMA -->
+<div class="day-card" id="day9">
+  <div class="day-header dogashima">
+    <div class="day-title">Day 9 — Sun Aug 9: West Coast Drive — Toi Gold Mine & Dogashima Sunset</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/30988699/pexels-photo-30988699.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Dogashima coast"><div class="img-caption">Dogashima's dramatic Sunset Coast</div></div>
+      <div><img src="https://images.pexels.com/photos/19775493/pexels-photo-19775493.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Toi Gold Mine"><div class="img-caption">Toi Gold Mine — walk through 400-year-old tunnels</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Dogashima+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Shimoda+Japan/Toi+Gold+Mine/Dogashima+Japan" target="_blank" class="route-link">🗺️ View Route: Shimoda → Toi → Dogashima →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–10:30</td><td>🚗 Scenic Drive</td><td>~1.5 hours from Shimoda to the west coast. This is one of Japan's most beautiful coastal drives — winding roads with the Pacific on your right. Stop at <strong>Koganezaki</strong> viewpoint for a photo break.</td></tr>
+      <tr><td class="time-col">10:30–12:00</td><td>⛏️ Toi Gold Mine</td><td>Walk through 400-year-old mining tunnels — once the second most productive gold mine in Japan. The tunnels are cool (great on a hot August day) and the history is fascinating. Try gold-flake soft serve at the café! <strong>¥860/adult, ¥430/child.</strong></td></tr>
+      <tr><td class="time-col">12:00–13:00</td><td>🍜 Lunch in Toi</td><td>Small seafood restaurants along the port. The <em>shirasu-don</em> (baby sardines over rice) is a local specialty.</td></tr>
+      <tr><td class="time-col">13:00–14:00</td><td>🚗 Coastal Drive</td><td>Continue south along the Sunset Coast. Stop at viewpoints — the contrast of green mountains and blue sea is incredible.</td></tr>
+      <tr><td class="time-col">14:00–15:00</td><td>🏠 Settle In</td><td>Check into your Dogashima Airbnb. West coast rentals are more rustic and secluded — enjoy the peace.</td></tr>
+      <tr><td class="time-col">15:00–17:00</td><td>🌊 Dogashima Coast</td><td>Explore the dramatic rock formations and sea-sculpted coastline. <strong>Tomboro</strong> — a natural rock arch — is the signature sight. Walk the seaside trails for endless photo ops.</td></tr>
+      <tr><td class="time-col">17:00–18:30</td><td>🌅 Sunset at Dogashima</td><td>This is the "Sunset Coast" for a reason. Find a spot overlooking the bay as the sun sinks into Suruga Bay behind Mt. Fuji's silhouette. The golden light on the rock formations is pure magic. <strong>Top photo of the trip.</strong></td></tr>
+      <tr><td class="time-col">18:30–20:00</td><td>🍲 Dinner</td><td>West coast dining is more limited — your Airbnb kitchen is your best friend. Pick up fresh seafood from a local market and cook a feast. Or find a small local <em>ryori-ryokan</em> serving <em>kaiseki</em> dinner.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- DAY 10 — SEA CAVES + MATSUZAKI -->
+<div class="day-card" id="day10">
+  <div class="day-header dogashima">
+    <div class="day-title">Day 10 — Mon Aug 10: Sea Caves, Matsuzaki Old Town & Coastal Relaxation</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/1615328/pexels-photo-1615328.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Sea cave boat tour"><div class="img-caption">Dogashima sea cave boat tours</div></div>
+      <div><img src="https://images.pexels.com/photos/19775493/pexels-photo-19775493.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Matsuzaki old town"><div class="img-caption">Matsuzaki's preserved Edo-era streets</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Dogashima+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Dogashima/Matsuzaki+Shizuoka+Japan" target="_blank" class="route-link">🗺️ View Route: Dogashima → Matsuzaki →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–10:30</td><td>🚤 Sea Cave Boat Tour</td><td>Take a 20-min boat cruise exploring the sea caves and rock formations around Dogashima. The <strong>Tensodo Cave</strong> — where sunlight pierces through a hole in the cave ceiling — is the highlight. Boats depart regularly from Dogashima port. <strong>¥1,500/adult, ¥750/child.</strong></td></tr>
+      <tr><td class="time-col">10:30–11:30</td><td>🌊 Cape Ose (optional)</td><td>If you're feeling adventurous, drive to Cape Ose — a remote beach where you can see Mt. Fuji from the sand. The road is winding and narrow but the reward is worth it. One of the few beaches in Japan with full Fuji views.</td></tr>
+      <tr><td class="time-col">11:30–12:00</td><td>🚗 Drive to Matsuzaki</td><td>~20 min north along the coast.</td></tr>
+      <tr><td class="time-col">12:00–13:00</td><td>🍜 Lunch in Matsuzaki</td><td>Matsuzaki is famous for <em>sakura-ebi</em> (cherry blossom shrimp) from Suruga Bay. Try the <em>sakura-ebi kakiage</em> (shrimp tempura fritter over rice) at a local restaurant.</td></tr>
+      <tr><td class="time-col">13:00–15:00</td><td>🏘️ Matsuzaki Old Town</td><td>Stroll through the Namako Wall district — Edo-period merchant houses with distinctive black-and-white lattice walls. It's like stepping back 200 years with virtually no crowds (unlike Kyoto). Visit the <strong>Iwashina School</strong>, Japan's oldest elementary school building — a beautiful Meiji-era wooden structure.</td></tr>
+      <tr><td class="time-col">15:00–17:00</td><td>🏖️ Matsuzaki Beach</td><td>A quieter local beach. Swim, read, or just enjoy the pace of small-town coastal Japan.</td></tr>
+      <tr><td class="time-col">17:00–19:00</td><td>🚗 Return & Relax</td><td>Drive back to Dogashima. Last sunset-watching session from your west coast perch.</td></tr>
+      <tr><td class="time-col">19:00–20:30</td><td>🍲 Final West Coast Dinner</td><td>Another home-cooked feast or a local restaurant. Savor the tranquility — tomorrow you head inland.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- DAY 11 — SHUZENJI -->
+<div class="day-card" id="day11">
+  <div class="day-header shuzenji">
+    <div class="day-title">Day 11 — Tue Aug 11: Shuzenji Onsen — Temples, Bamboo & Foot Baths</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/2803229/pexels-photo-2803229.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Shuzenji Temple"><div class="img-caption">Shuzenji Temple — 1,200 years of history</div></div>
+      <div><img src="https://images.pexels.com/photos/30886960/pexels-photo-30886960.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Bamboo Grove"><div class="img-caption">Shuzenji's magical bamboo forest path</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Shuzenji+Onsen+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Dogashima+Japan/Shuzenji+Onsen+Japan" target="_blank" class="route-link">🗺️ View Route: Dogashima → Shuzenji →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–10:00</td><td>🚗 Drive to Shuzenji</td><td>~1 hour drive inland from Dogashima through mountain roads. The landscape changes from coastal to lush forest.</td></tr>
+      <tr><td class="time-col">10:00–10:30</td><td>🏠 Settle In</td><td>Check into your Shuzenji Airbnb. This is your onsen retreat — hopefully with a private hot spring bath!</td></tr>
+      <tr><td class="time-col">10:30–12:00</td><td>⛩️ Shuzenji Temple</td><td>The heart of this 1,200-year-old hot spring town. Founded by Kobo Daishi (the same monk who founded the Shikoku pilgrimage). The temple grounds are serene with ancient cedars and a thatched-roof hall. <strong>Free entry.</strong></td></tr>
+      <tr><td class="time-col">12:00–13:30</td><td>🍜 Lunch</td><td>Try <em>onsen manju</em> (steamed buns made with hot spring water) from a street vendor, then proper lunch at a soba or unagi (eel) restaurant along the main street.</td></tr>
+      <tr><td class="time-col">13:30–15:00</td><td>🎋 Bamboo Forest Path</td><td>Shuzenji's bamboo grove rivals Kyoto's Arashiyama — but with a fraction of the crowds. Walk the lantern-lined path through towering bamboo. The light filtering through the stalks is mesmerizing. Perfect for family photos.</td></tr>
+      <tr><td class="time-col">15:00–16:30</td><td>♨️ Foot Baths & Kaede Bridge</td><td>Soak your feet in the free <em>ashiyu</em> (foot baths) along the Katsura River. The red <strong>Kaede Bridge</strong> over the river is the town's most iconic view. Legend says couples who cross it together find eternal love (the teens will cringe, you'll love it).</td></tr>
+      <tr><td class="time-col">16:30–18:00</td><td>♨️ Tokko-no-Yu</td><td>The original hot spring that started it all — a simple wooden bathhouse on the river where Kobo Daishi is said to have bathed 1,200 years ago. The water is alkaline, leaving your skin impossibly smooth. <strong>¥350/adult.</strong> Or save the full onsen experience for tomorrow.</td></tr>
+      <tr><td class="time-col">18:00–20:00</td><td>🍲 Dinner</td><td>Shuzenji has excellent <em>kaiseki</em> (multi-course Japanese dinner) restaurants. Book a meal at your Airbnb if the host offers it, or try <strong>Yumeguri no Yado Katsuragawa</strong> for a restaurant dinner with private onsen access (~¥10,000/person with onsen and meal).</td></tr>
+    </table>
+    <div class="info-box tip"><strong>♨️ Onsen Etiquette:</strong> Wash thoroughly before entering the bath. No swimsuits — Japanese onsen are nude (but gender-separated). Tattoos may be an issue at some public baths — check in advance. Private/family baths (kashikiri-buro) are a great option if anyone has tattoos or prefers privacy.</div>
+  </div>
+</div>
+
+<!-- DAY 12 — SHUZENJI RELAX -->
+<div class="day-card" id="day12">
+  <div class="day-header shuzenji">
+    <div class="day-title">Day 12 — Wed Aug 12: Shuzenji Relaxation — Onsen, Amagi Tunnel & Deep Rest</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/30933038/pexels-photo-30933038.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Japanese onsen"><div class="img-caption">A day dedicated to the art of hot spring bathing</div></div>
+      <div><img src="https://images.pexels.com/photos/1673978/pexels-photo-1673978.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Amagi Tunnel"><div class="img-caption">Old Amagi Tunnel — cool, mysterious, and moss-covered</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Shuzenji+Onsen+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Shuzenji+Onsen/Old+Amagi+Tunnel" target="_blank" class="route-link">🗺️ View Route: Shuzenji → Amagi Tunnel →</a>
+
+    <p style="margin:15px 0;"><strong>This is your designated recharge day.</strong> After 11 days of exploration, everyone needs a breather — especially the teens. Sleep in, soak, and take it slow.</p>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–10:30</td><td>😴 Sleep In</td><td>No alarms. Wake up when your body says so. Coffee on the terrace, birdsong, mountain air.</td></tr>
+      <tr><td class="time-col">10:30–12:00</td><td>♨️ Morning Onsen</td><td>If your Airbnb has a private bath — perfect. Otherwise, visit one of Shuzenji's many day-use onsen. <strong>Hako-Yu</strong> near the river is excellent (¥400). The morning light through the bathhouse windows is beautiful.</td></tr>
+      <tr><td class="time-col">12:00–13:00</td><td>🍜 Lunch</td><td>Try Shuzenji's famous <em>onsen soba</em> — buckwheat noodles made with hot spring water.</td></tr>
+      <tr><td class="time-col">13:00–15:00</td><td>🚗 Old Amagi Tunnel</td><td>Drive 20 min into the mountains to this atmospheric abandoned tunnel. Built in 1905, it's now a pedestrian path — moss-covered stonework, cool even in August, and wonderfully eerie. The teens will love the ghost-story vibes. Great photo spot.</td></tr>
+      <tr><td class="time-col">15:00–17:00</td><td>🧘 Free Time</td><td>Read by the river, journal, take a nap, soak again. Let each family member do their own thing for a couple of hours. There's a <strong>small waterfall and meditation spot</strong> behind Shuzenji Temple that's perfect for quiet reflection.</td></tr>
+      <tr><td class="time-col">17:00–18:00</td><td>🍵 Matcha Break</td><td>Find a tea house serving <em>matcha</em> and Japanese sweets. The traditional sweet shops along Shuzenji's main street have been operating for generations.</td></tr>
+      <tr><td class="time-col">18:00–20:00</td><td>🍲 Farewell Shuzenji Dinner</td><td>A special last dinner. Book a <strong>private onsen + kaiseki dinner</strong> package at a local ryokan. The multi-course meal is an art form — beautifully presented seasonal dishes, many featuring local wasabi and mountain vegetables. ~¥8,000–12,000/person for the full experience.</td></tr>
+    </table>
+    <div class="info-box tip"><strong>💡 Recharge Day Philosophy:</strong> The Izu Peninsula isn't about ticking boxes — it's about soaking in the atmosphere (literally and figuratively). This slow day in Shuzenji will be one of your most memorable, because you won't be rushing anywhere.</div>
+  </div>
+</div>
+
+<!-- DAY 13 — RETURN TO TOKYO -->
+<div class="day-card" id="day13">
+  <div class="day-header tokyo">
+    <div class="day-title">Day 13 — Thu Aug 13: Return to Tokyo — Return the Car & Explore Shibuya</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/32110182/pexels-photo-32110182.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Tokyo cityscape"><div class="img-caption">Tokyo — the world's most exciting city awaits</div></div>
+      <div><img src="https://images.pexels.com/photos/25315775/pexels-photo-25315775.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Shibuya Crossing"><div class="img-caption">Shibuya — the energy shift is electrifying</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Shibuya+Tokyo+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Shuzenji+Onsen+Japan/Tokyo+Station" target="_blank" class="route-link">🗺️ View Route: Shuzenji → Tokyo →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–9:30</td><td>🥐 Final Onsen Breakfast</td><td>One last soak if you can, then pack up. Thank your Airbnb host — Shuzenji stays are special.</td></tr>
+      <tr><td class="time-col">9:30–12:00</td><td>🚗 Drive to Tokyo</td><td>~2.5 hours via Izu-Jukan Expressway → Tomei Expressway. The transition from mountain roads to the Tokyo skyline is surreal. Stop at <strong>Ebina Service Area</strong> on the Tomei — it's like a food court mall with amazing views.</td></tr>
+      <tr><td class="time-col">12:00–12:30</td><td>🚗 Return Rental Car</td><td>Drop off at Tokyo Station or Shinagawa. Do a final inspection, settle the ETC toll charges, and say goodbye to your trusty Noah.</td></tr>
+      <tr><td class="time-col">12:30–13:30</td><td>🏠 Check into Tokyo Airbnb</td><td>Drop your bags at your Shinjuku or Shibuya Airbnb. The contrast from Izu's quiet to Tokyo's energy will hit you — in the best way.</td></tr>
+      <tr><td class="time-col">13:30–15:00</td><td>🍜 Ramen Lunch</td><td>Your first proper Tokyo ramen. <strong>Ichiran</strong> (Shibuya) for solo-booth novelty, or <strong>Fuunji</strong> (Shinjuku) for the best <em>tsukemen</em> (dipping noodles) in town.</td></tr>
+      <tr><td class="time-col">15:00–17:00</td><td>🚶 Shibuya Exploration</td><td><strong>Shibuya Crossing</strong> (the world's busiest intersection) → <strong>Hachiko Statue</strong> → <strong>Shibuya Sky</strong> observation deck (book ahead — the sunset tickets sell out weeks in advance, ¥2,200/adult). The open-air rooftop at 229m is jaw-dropping.</td></tr>
+      <tr><td class="time-col">17:00–19:00</td><td>🛍️ Shibuya Shopping</td><td>Teens will love <strong>Shibuya 109</strong> (trendy youth fashion), <strong>MEGA Don Quijote</strong> (everything store — souvenirs, snacks, gadgets), and <strong>Nintendo Tokyo</strong> (Parco building, 6F).</td></tr>
+      <tr><td class="time-col">19:00–21:00</td><td>🥩 Yakiniku Dinner</td><td>Celebrate your return to civilization with <em>yakiniku</em> (Japanese Korean BBQ). The teens get to grill premium wagyu at the table. <strong>Yakiniku Like</strong> is a fun budget option, or <strong>Ushigoro</strong> for a splurge.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- DAY 14 — TOKYO -->
+<div class="day-card" id="day14">
+  <div class="day-header tokyo">
+    <div class="day-title">Day 14 — Fri Aug 14: Tokyo Highlights — Asakusa, Akihabara & Last Night</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/17837142/pexels-photo-17837142.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Asakusa Sensoji"><div class="img-caption">Sensoji Temple — Tokyo's oldest and most beloved</div></div>
+      <div><img src="https://images.pexels.com/photos/858501/pexels-photo-858501.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Japanese food market"><div class="img-caption">Tsukiji Outer Market — a seafood lover's paradise</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Asakusa+Tokyo+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Asakusa/Akihabara/Tsukiji+Outer+Market" target="_blank" class="route-link">🗺️ View Route: Asakusa → Akihabara → Tsukiji →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">9:00–10:00</td><td>🚇 Train to Asakusa</td><td>Navigate Tokyo's subway — part of the adventure! Get a Suica card for each family member (tappable IC card, works on trains + konbini).</td></tr>
+      <tr><td class="time-col">10:00–12:00</td><td>⛩️ Sensoji Temple & Nakamise Street</td><td>Tokyo's oldest temple, dedicated to Kannon (goddess of mercy). Walk through the giant red <strong>Kaminarimon</strong> gate with its massive lantern, then down Nakamise-dori — a 200m shopping street with traditional snacks, souvenirs, and crafts. Try <em>ningyo-yaki</em> (little doll-shaped cakes filled with red bean paste) and freshly made <em>senbei</em> (rice crackers).</td></tr>
+      <tr><td class="time-col">12:00–13:00</td><td>🍤 Tsukiji Outer Market</td><td>Short train ride to Tsukiji. The wholesale market moved to Toyosu, but the Outer Market remains THE place for street seafood. Eat your way through: <em>tamagoyaki</em> (rolled omelet on a stick), grilled scallops with butter, uni (sea urchin), and the freshest sashimi of your life. <strong>¥2,000–3,000/person for a grazing lunch.</strong></td></tr>
+      <tr><td class="time-col">13:00–15:30</td><td>🎮 Akihabara Electric Town</td><td>Teen paradise: multi-story arcades (try <strong>Taito HEY</strong> for retro games), anime/manga shops, gachapon (capsule toy) halls, and the wildest electronics stores you've ever seen. <strong>Yodobashi Camera Akiba</strong> is 9 floors of everything. Budget ¥3,000–5,000/teen for arcade fun and souvenirs.</td></tr>
+      <tr><td class="time-col">15:30–17:00</td><td>☕ Maid Café (optional)</td><td>If the teens are curious about quirky Tokyo culture, Akihabara is ground zero. A 30-min coffee + photo is ~¥2,000/person. Pure kitschy fun — the teens will have stories to tell.</td></tr>
+      <tr><td class="time-col">17:00–19:00</td><td>🚿 Rest & Pack</td><td>Head back to the Airbnb. Start packing (departure tomorrow). Rest before the final night out.</td></tr>
+      <tr><td class="time-col">19:00–21:00</td><td>🍣 Farewell Dinner</td><td>Go out in style. <strong>Gonpachi Nishiazabu</strong> (the "Kill Bill" restaurant) for a fun themed dinner, or a <em>kaiten-zushi</em> (conveyor belt sushi) experience at <strong>Uobei</strong> in Shibuya — plates from ¥110, ordered via touchscreen, delivered by shinkansen-shaped conveyor. Affordable and incredibly fun for families.</td></tr>
+      <tr><td class="time-col">21:00–22:00</td><td>🌃 Last Tokyo Night</td><td>Walk through Shinjuku's neon wonderland. <strong>Omoide Yokocho</strong> (Memory Lane/Piss Alley) for the atmosphere, then <strong>Tokyo Metropolitan Government Building</strong> for free 202m-high night views (open until 23:00). A perfect final memory.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- DAY 15 — DEPARTURE -->
+<div class="day-card" id="day15">
+  <div class="day-header travel">
+    <div class="day-title">Day 15 — Sat Aug 15: Sayonara Japan 🛫</div>
+  </div>
+  <div class="day-body">
+    <div class="day-images">
+      <div><img src="https://images.pexels.com/photos/2451082/pexels-photo-2451082.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Last Japanese breakfast"><div class="img-caption">One last Japanese breakfast before the journey home</div></div>
+      <div><img src="https://images.pexels.com/photos/35589820/pexels-photo-35589820.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="Sayonara Japan"><div class="img-caption">Sayonara — until next time 🇯🇵</div></div>
+    </div>
+    <div class="map-container day-map">
+      <iframe src="https://www.google.com/maps?q=Haneda+Airport+Tokyo+Japan&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/Shinjuku+Tokyo/Haneda+Airport" target="_blank" class="route-link">🗺️ View Route: Airbnb → Haneda Airport →</a>
+
+    <table class="schedule">
+      <tr><th class="time-col">Time</th><th>Activity</th><th>Details</th></tr>
+      <tr><td class="time-col">8:00–9:00</td><td>🥐 Last Breakfast</td><td>Hotel/Airbnb checkout. Grab onigiri (rice balls) and melon pan from a konbini for a classic Japanese breakfast-on-the-go.</td></tr>
+      <tr><td class="time-col">9:00–11:00</td><td>🚆 Transfer to Airport</td><td>~30–40 min to Haneda by train/taxi. Aim to arrive <strong>2.5–3 hours</strong> before your flight for international departure.</td></tr>
+      <tr><td class="time-col">11:00–13:00</td><td>🛍️ Airport Shopping</td><td>Haneda has excellent duty-free shopping and restaurants. Last chance for KitKats (matcha, sake, wasabi flavors), Tokyo Banana, and Japanese whiskey. The <strong>Edo Market</strong> area of Haneda's international terminal is worth arriving early for.</td></tr>
+      <tr><td class="time-col">13:00–</td><td>✈️ Depart</td><td>Board your flight home. 10–12 hours to the US West Coast — time to edit photos, journal, and start planning your return trip.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ====== FULL COST BREAKDOWN ====== -->
+<h2 id="costs">💵 Full Cost Breakdown</h2>
+
+<div class="budget-tabs">
+  <span class="budget-tab">💰 Budget</span>
+  <span class="budget-tab recommended">⭐ Recommended</span>
+  <span class="budget-tab">🥂 Premium</span>
+</div>
+
+<table class="styled-table">
+  <tr><th>Category</th><th>Budget Tier</th><th>Recommended Tier ⭐</th><th>Premium Tier</th></tr>
+  <tr>
+    <td><strong>✈️ Flights</strong> (US ↔ Tokyo, family of 4)</td>
+    <td>$2,600<br><small>ZIPAIR from LAX, basic</small></td>
+    <td>$4,000<br><small>ANA/JAL from West Coast, full-service</small></td>
+    <td>$8,000<br><small>Premium Economy, East Coast departure</small></td>
+  </tr>
+  <tr>
+    <td><strong>🚗 Rental Car</strong> (14 days, incl. tolls, fuel, insurance)</td>
+    <td>$1,200<br><small>Toyota Noah, basic insurance</small></td>
+    <td>$1,500<br><small>Toyota Noah, full coverage</small></td>
+    <td>$2,000<br><small>Toyota Alphard (luxury minivan)</small></td>
+  </tr>
+  <tr>
+    <td><strong>🏠 Accommodation</strong> (14 nights Airbnb)</td>
+    <td>$3,200<br><small>~$225/night avg</small></td>
+    <td>$4,200<br><small>~$300/night avg</small></td>
+    <td>$6,300<br><small>~$450/night avg, luxury rentals</small></td>
+  </tr>
+  <tr>
+    <td><strong>🍽️ Food</strong> (15 days, family of 4)</td>
+    <td>$1,200<br><small>~$80/day, konbini + cooking</small></td>
+    <td>$2,100<br><small>~$140/day, mix of restaurants</small></td>
+    <td>$4,000<br><small>~$270/day, kaiseki + fine dining</small></td>
+  </tr>
+  <tr>
+    <td><strong>🎫 Sightseeing & Activities</strong></td>
+    <td>$400<br><small>Free sights + selective paid entries</small></td>
+    <td>$800<br><small>All major attractions included</small></td>
+    <td>$1,500<br><small>Private tours, dolphin swim, etc.</small></td>
+  </tr>
+  <tr>
+    <td><strong>🚇 Local Transport</strong> (Tokyo trains, parking)</td>
+    <td>$200<br><small>Basic Suica, free parking</small></td>
+    <td>$400<br><small>Suica + paid parking at attractions</small></td>
+    <td>$600<br><small>Taxis + valet parking</small></td>
+  </tr>
+  <tr>
+    <td><strong>📱 Misc</strong> (SIM cards, travel insurance, laundry, souvenirs)</td>
+    <td>$300</td>
+    <td>$600</td>
+    <td>$1,200</td>
+  </tr>
+  <tr style="font-weight:bold;background:#f0f7ff;font-size:1.1em">
+    <td><strong>🟰 GRAND TOTAL</strong></td>
+    <td><strong>~$9,100</strong></td>
+    <td><strong>~$13,600</strong></td>
+    <td><strong>~$23,600</strong></td>
+  </tr>
+  <tr style="background:#f0f7ff;">
+    <td><em>Per person</em></td>
+    <td><em>~$2,275</em></td>
+    <td><em>~$3,400</em></td>
+    <td><em>~$5,900</em></td>
+  </tr>
+</table>
+
+<div class="info-box"><strong>💵 Note on Budget:</strong> You indicated a moderate budget (~$250-450/night for accommodation). The <strong>Recommended Tier</strong> hits ~$300/night for Airbnbs and ~$13,600 total for the trip. This is a realistic, comfortable family trip — nice rentals, good food, all major sights, without extravagance.</div>
+
+<!-- ====== FOOD GUIDE ====== -->
+<h2 id="tips">📌 Practical Tips & Izu Food Guide</h2>
+
+<h3>🍱 Must-Try Foods on the Izu Peninsula</h3>
+
+<table class="styled-table">
+  <tr><th>Dish</th><th>What It Is</th><th>Best Place to Try</th></tr>
+  <tr><td><strong>Kinmedai (Golden Eye Snapper)</strong></td><td>Izu's signature fish — sweet, delicate white flesh. Served braised (<em>nitsuke</em>) or sashimi. The soy-mirin braise is legendary.</td><td>Tsuji in Shimoda (reservations essential)</td></tr>
+  <tr><td><strong>Ise-ebi (Japanese Spiny Lobster)</strong></td><td>Grilled over charcoal or served as sashimi. Rich, sweet, and decadent.</td><td>Port-side restaurants in Toi and Shimoda</td></tr>
+  <tr><td><strong>Fresh Wasabi</strong></td><td>Izu produces Japan's finest wasabi. Grated fresh on a sharkskin grater — nothing like the green paste you know.</td><td>Wasabi farms near Kawazu and Amagi</td></tr>
+  <tr><td><strong>Wasabi Soba</strong></td><td>Cold buckwheat noodles with fresh-grated wasabi. Simple, refreshing summer food.</td><td>Throughout Izu, especially Shuzenji</td></tr>
+  <tr><td><strong>Wasabi Ice Cream</strong></td><td>Sweet, creamy, with a gentle wasabi kick. Not spicy — more like a sophisticated vanilla with a warm finish.</td><td>Kawazu Seven Waterfalls area</td></tr>
+  <tr><td><strong>Sakura-ebi (Cherry Blossom Shrimp)</strong></td><td>Tiny pink shrimp from Suruga Bay. Eaten as <em>kakiage</em> (tempura fritter) over rice.</td><td>Matsuzaki and west coast ports</td></tr>
+  <tr><td><strong>Onsen Manju</strong></td><td>Steamed sweet buns made with hot spring water, filled with red bean paste.</td><td>Street vendors in Shuzenji</td></tr>
+  <tr><td><strong>Shirasu-don</strong></td><td>Baby sardines (raw or boiled) over rice with ginger and soy sauce. A Shizuoka specialty.</td><td>Toi and west coast restaurants</td></tr>
+</table>
+
+<h3>🗺️ Driving & Navigation Tips</h3>
+
+<div class="info-box tip">
+<strong>🚗 Essential Driving Info:</strong><br>
+• Japan drives on the <strong>LEFT</strong> (same as UK, opposite of US)<br>
+• Speed limits: 40-50 km/h in towns, 80-100 km/h on expressways (everyone goes slightly faster)<br>
+• Most road signs are bilingual (Japanese + English)<br>
+• Google Maps works great for navigation — download offline maps as backup<br>
+• Expressway rest stops (<em>SA/PA</em>) in Japan are amazing — clean bathrooms, great food courts, local souvenirs<br>
+• Gas stations are full-service — just say "mantan" for a full tank<br>
+• <strong>ETC card is essential</strong> — Japan's toll system is entirely electronic. Your rental car company will provide one
+</div>
+
+<h3>💴 Money & Connectivity</h3>
+
+<div class="info-box">
+• <strong>Cash is still king</strong> in rural Izu — many small restaurants and attractions are cash-only. Carry ¥30,000–50,000 at all times<br>
+• 7-Eleven ATMs (Seven Bank) accept foreign cards and are everywhere<br>
+• <strong>SIM cards:</strong> Rent a pocket Wi-Fi or buy a data SIM at the airport. Izu coverage is good but can be spotty in mountain areas<br>
+• <strong>Suica/IC cards:</strong> Get one for each family member for trains, konbini purchases, and some vending machines<br>
+• Tipping does not exist in Japan. Exceptional service is the baseline
+</div>
+
+<h3>🏥 Safety & Health</h3>
+
+<div class="info-box">
+• Japan is one of the safest countries in the world — violent crime is virtually nonexistent<br>
+• August is <strong>hot and humid</strong> (30-35°C / 86-95°F with high humidity). Stay hydrated, wear sun protection<br>
+• Mosquitoes can be active near rivers and waterfalls — bring repellent<br>
+• Tap water is safe to drink everywhere<br>
+• <strong>Travel insurance</strong> is strongly recommended — Japan's healthcare is excellent but expensive for uninsured visitors<br>
+• Convenience stores (konbini) sell everything you'd need in a pinch — from underwear to phone chargers to surprisingly good food
+</div>
+
+<h3>🌸 August in Izu — What to Expect</h3>
+
+<div class="info-box">
+• <strong>Peak summer:</strong> Hot and humid. Beaches are at their best — water temperature ~26°C (79°F)<br>
+• <strong>Obon holiday (Aug 8–17):</strong> Japan's summer family travel period. Expect more domestic tourists at popular spots. Book everything early<br>
+• <strong>Fireworks:</strong> Multiple fireworks festivals during your stay — you're perfectly timed for the Izusan (Aug 3), Atami Marine (Aug 5), and Taga Bay (Aug 12) shows<br>
+• <strong>Crowds:</strong> Beaches are busiest on weekends (Aug 1-2, 8-9). Plan beach days for weekdays when possible<br>
+• <strong>Typhoon possibility:</strong> August is typhoon season. Rare but possible — monitor weather forecasts. Have a flexible indoor backup plan for 1-2 days
+</div>
+
+<!-- ====== FOOTER ====== -->
+<div class="footer">
+  <h3 style="color:white;">🇯🇵 よい旅を！(Yoi Tabi wo! — Have a Great Trip!)</h3>
+  <p>This itinerary covers ~500 km of Japan's most beautiful coastline and mountains over 15 unforgettable days.<br>
+  From Atami's fireworks to Shimoda's beaches, from Dogashima's sunsets to Shuzenji's ancient onsen —<br>
+  the Izu Peninsula is Japan at its most soulful. Your family will never forget it.</p>
+  <p style="margin-top:20px;font-size:0.9em;">
+    Generated June 2026 &middot; All prices in USD (¥150 ≈ $1) &middot; Verify current prices before booking<br>
+    <a href="https://www.google.com/maps/dir/Atami+Japan/Ito+Japan/Kawazu+Japan/Shimoda+Japan/Dogashima+Japan/Shuzenji+Onsen+Japan/Tokyo+Japan" target="_blank">🗺️ View Full Route on Google Maps</a>
+  </p>
+</div>
+
+</body>
+</html>
