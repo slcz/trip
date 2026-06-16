@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Add 12-day UK family itinerary *)",
+      "Bash(brew install *)",
+      "Bash(gh repo *)",
+      "Bash(git commit -m 'Add enriched HTML itinerary with maps and images *)",
+      "Bash(git push *)",
+      "Bash(git remote *)",
+      "Bash(open *)",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(curl -s -o /dev/null -w \"London: %{http_code} %{url_effective}\\\\n\" --max-time 3 \"https://source.unsplash.com/800x500/?london,buckingham-palace\")",
+      "Bash(curl -s -o /dev/null -w \"York: %{http_code} %{url_effective}\\\\n\" --max-time 3 \"https://source.unsplash.com/800x500/?york,city\")",
+      "Bash(curl -s -o /dev/null -w \"Edinburgh: %{http_code} %{url_effective}\\\\n\" --max-time 3 \"https://source.unsplash.com/800x500/?edinburgh,castle\")",
+      "Bash(curl -s -o /dev/null -w \"Lake: %{http_code} %{url_effective}\\\\n\" --max-time 3 \"https://source.unsplash.com/800x500/?lake-district,england\")",
+      "Bash(curl -s -o /dev/null -w \"Picsum: %{http_code}\\\\n\" --max-time 3 \"https://picsum.photos/800/500\")",
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(gh api *)",
+      "Bash(git commit -m 'Add index.html redirect for GitHub Pages *)",
+      "Bash(git commit -m 'Fix Day 2 London map with real working embed *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" --max-time 5 \"https://www.google.com/maps/dir/London/York/Edinburgh/Windermere/Heathrow?output=embed\")",
+      "Bash(curl -s -I --max-time 5 \"https://www.google.com/maps/dir/London/York/Edinburgh?output=embed\")",
+      "Bash(git commit -m 'Restore route on overall map using dir/ format with output=embed *)",
+      "Bash(curl -s -I --max-time 5 \"https://www.google.com/maps/dir/London,+UK/York,+UK/Edinburgh,+UK?output=embed\")",
+      "Bash(curl -s -I --max-time 5 \"https://www.google.com/maps?q=York+Minster&output=embed\")",
+      "Bash(curl -s -I --max-time 5 \"https://www.google.com/maps/embed?origin=mfe&pb=!1m18!1m12!1m3!1d2483.540425865296!2d-0.1277583!3d51.5073509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2sus!4v1\")",
+      "Bash(curl -s -I --max-time 5 \"https://www.google.com/maps?q=London&output=embed\")",
+      "Bash(git commit -m 'Switch overall route map back to Google Maps *)",
+      "Bash(curl *)",
+      "WebFetch(domain:www.google.com)",
+      "Bash(git commit -m 'Fix overall route map with verified working 4-stop Google Maps embed *)",
+      "Bash(awk '/Day 1/{found=1} found && /<\\\\/div>.*day-images/ || found && /<\\\\/div>/{if\\(/schedule/\\){print NR\": \"$0; exit}}' /Users/sileizhang/arch/trip/UK_12Day_Family_Itinerary.html)",
+      "Bash(git commit -m 'Add Google Maps to all 11 itinerary days *)",
+      "Bash(python3 *)",
+      "Bash(git commit -m 'Add '\\\\''View Full Route'\\\\'' Google Maps links to every day *)",
+      "Bash(git revert *)"
+    ]
+  }
+}
