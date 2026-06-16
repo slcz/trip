@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🇬🇧 12-Day UK Family Trip — Enriched Itinerary with Maps & Photos</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
   :root {
     --primary: #1a3a5c; --accent: #c9a84c; --bg: #faf9f6;
@@ -98,9 +96,11 @@
 <!-- HERO: London Skyline -->
 <img class="hero-img" src="https://images.pexels.com/photos/16870390/pexels-photo-16870390.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop&dpr=2" alt="London Skyline">
 
-<!-- ====== OVERALL ROUTE MAP (Leaflet + OpenStreetMap) ====== -->
+<!-- ====== OVERALL ROUTE MAP ====== -->
 <h2>🗺️ Overall Route Map</h2>
-<div id="route-map" class="map-container"></div>
+<div class="map-container">
+  <iframe src="https://www.google.com/maps?q=54.0,-2.5&z=7&output=embed" allowfullscreen="" loading="lazy"></iframe>
+</div>
 <p style="text-align:center;color:var(--muted);margin-top:8px">📍 London → 🚂 York → 🚂 Edinburgh → 🚂 Windermere → 🚂 London (Heathrow) | ~900 miles by train</p>
 
 <div class="route-overview">
@@ -529,60 +529,6 @@
   <p style="margin-top:15px;opacity:0.8">Generated for the Zhang family · Summer 2026 · 🏴󠁧󠁢󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁳󠁣󠁴󠁿</p>
 </div>
 
-<!-- Leaflet Route Map -->
-<script>
-(function() {
-  var cities = [
-    { name: 'London (Heathrow)', lat: 51.4700, lng: -0.4543, color: '#c41e3a' },
-    { name: 'London', lat: 51.5072, lng: -0.1276, color: '#c41e3a' },
-    { name: 'York', lat: 53.9600, lng: -1.0873, color: '#8b4513' },
-    { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, color: '#2e5fa1' },
-    { name: 'Windermere', lat: 54.3800, lng: -2.9060, color: '#2d7d46' }
-  ];
-
-  var bounds = [[49.8, -7.5], [57.5, 2.5]];
-  var map = L.map('route-map', { scrollWheelZoom: true }).fitBounds(bounds);
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    maxZoom: 18
-  }).addTo(map);
-
-  // Add markers for each city
-  cities.forEach(function(c, i) {
-    var marker = L.circleMarker([c.lat, c.lng], {
-      radius: 8, fillColor: c.color, color: '#fff', weight: 2, fillOpacity: 1
-    }).addTo(map);
-    marker.bindTooltip(c.name, { permanent: true, direction: 'top', offset: [0, -10],
-      className: 'route-label' });
-  });
-
-  // Draw route line
-  var routeCoords = cities.map(function(c) { return [c.lat, c.lng]; });
-  var polyline = L.polyline(routeCoords, {
-    color: '#c9a84c', weight: 4, opacity: 0.8, dashArray: '10, 5'
-  }).addTo(map);
-
-  // Add train icons along the route to show direction
-  cities.forEach(function(c, i) {
-    if (i < cities.length - 1) {
-      var midLat = (c.lat + cities[i+1].lat) / 2;
-      var midLng = (c.lng + cities[i+1].lng) / 2;
-      L.marker([midLat, midLng], {
-        icon: L.divIcon({ html: '🚂', className: 'train-icon', iconSize: [24, 24], iconAnchor: [12, 12] })
-      }).addTo(map);
-    }
-  });
-})();
-</script>
-<style>
-.route-label {
-  background: rgba(0,0,0,0.75); color: #fff; border: none; border-radius: 4px;
-  padding: 2px 8px; font-size: 12px; font-family: Georgia, serif; white-space: nowrap;
-}
-.train-icon { background: transparent !important; border: none !important; font-size: 20px; }
-#route-map { cursor: grab; }
-</style>
 
 </body>
 </html>
